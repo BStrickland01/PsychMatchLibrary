@@ -1,40 +1,152 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_A4221B_Psychmatch" Class="LinqToSqlDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=sql5039.site4now.net;Initial Catalog=DB_A4221B_Psychmatch;Persist Security Info=True;User ID=DB_A4221B_Psychmatch_admin" SettingsObjectName="PSL.Properties.Settings" SettingsPropertyName="DB_A4221B_PsychmatchConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblLanguages" Member="tblLanguages">
+    <Type Name="tblLanguage">
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Language" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblLanguage_tblClinicianLanguage" Member="tblClinicianLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblClinicianLanguage" />
+      <Association Name="tblJobLanguage_tblLanguage" Member="tblJobLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblJobLanguage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPositionType" Member="tblPositionTypes">
+    <Type Name="tblPositionType">
+      <Column Name="PositionTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblPositionType_tblJob" Member="tblJobs" ThisKey="PositionTypeID" OtherKey="PositionTypeID" Type="tblJob" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblServiceType" Member="tblServiceTypes">
+    <Type Name="tblServiceType">
+      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblServiceType_tblJob" Member="tblJobs" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="tblJob" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblYearsExperience" Member="tblYearsExperiences">
+    <Type Name="tblYearsExperience">
+      <Column Name="YearExpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblYearsExperience_tblClinician" Member="tblClinicians" ThisKey="YearExpID" OtherKey="YearsExpID" Type="tblClinician" />
+      <Association Name="tblYearsExperience_tblJob" Member="tblJobs" ThisKey="YearExpID" OtherKey="YearsExpID" Type="tblJob" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblJobJobExperienceType" Member="tblJobJobExperienceTypes">
+    <Type Name="tblJobJobExperienceType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JobExperienceType" Member="JobExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblJobJobExperienceType_tblJobExperienceType" Member="tblJobExperienceTypes" ThisKey="JobExperienceTypeID" OtherKey="JobExperienceTypeID" Type="tblJobExperienceType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblJobLanguage" Member="tblJobLanguages">
+    <Type Name="tblJobLanguage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblJobLanguage_tblLanguage" Member="tblLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblLanguage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblJobExperienceType" Member="tblJobExperienceTypes">
+    <Type Name="tblJobExperienceType">
+      <Column Name="JobExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblJobJobExperienceType_tblJobExperienceType" Member="tblJobJobExperienceType" ThisKey="JobExperienceTypeID" OtherKey="JobExperienceTypeID" Type="tblJobJobExperienceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmployerClinicianStatus" Member="tblEmployerClinicianStatus">
+    <Type Name="tblEmployerClinicianStatus">
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEmployerClinicianStatus_tblClinician" Member="tblClinicians" ThisKey="StatusID" OtherKey="StatusID" Type="tblClinician" />
+      <Association Name="tblEmployerClinicianStatus_tblEmployer" Member="tblEmployers" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployer" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblClinician" Member="tblClinicians">
     <Type Name="tblClinician">
       <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="UserName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="true" />
       <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="EmailAddress" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="YearsExpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="RegistrationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="ClinicianTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AvailabilityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LiscenseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblClinician_tblAddress" Member="tblAddresses" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" />
-      <Association Name="tblClinician_tblClinicianLanguage" Member="tblClinicianLanguages" ThisKey="ClinicianID" OtherKey="ClinicianID" Type="tblClinicianLanguage" />
-      <Association Name="tblClinician_tblClinicianType" Member="tblClinicianTypes" ThisKey="ClinicianTypeID" OtherKey="ClinicianTypeID" Type="tblClinicianType" />
-      <Association Name="tblClinician_tblEmployerClinicianStatus" Member="tblEmployerClinicianStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployerClinicianStatus" />
+      <Column Name="ClinicianDocumentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="varchar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblEmployerClinicianStatus_tblClinician" Member="tblEmployerClinicianStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployerClinicianStatus" IsForeignKey="true" />
+      <Association Name="tblYearsExperience_tblClinician" Member="tblYearsExperience" ThisKey="YearsExpID" OtherKey="YearExpID" Type="tblYearsExperience" IsForeignKey="true" />
+      <Association Name="tblClinicianType_tblClinician" Member="tblClinicianType" ThisKey="ClinicianTypeID" OtherKey="ClinicianTypeID" Type="tblClinicianType" IsForeignKey="true" />
+      <Association Name="tblAvailability_tblClinician" Member="tblAvailability" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblAvailability" IsForeignKey="true" />
+      <Association Name="tblClinicianDocument_tblClinician" Member="tblClinicianDocument" ThisKey="ClinicianDocumentID" OtherKey="ID" Type="tblClinicianDocument" IsForeignKey="true" />
+      <Association Name="tblClinicianLanguage_tblClinician" Member="tblClinicianLanguage" ThisKey="ClinicianID" OtherKey="ClinicianID" Type="tblClinicianLanguage" IsForeignKey="true" />
+      <Association Name="tblAddress_tblClinician" Member="tblAddress" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblAddress" Member="tblAddresses">
-    <Type Name="tblAddress">
-      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AddressLine1" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="AddressLine2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="State" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Zip" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
-      <Association Name="tblClinician_tblAddress" Member="tblClinician" ThisKey="AddressID" OtherKey="AddressID" Type="tblClinician" IsForeignKey="true" />
-      <Association Name="tblEmployer_tblAddress" Member="tblEmployer" ThisKey="AddressID" OtherKey="AddressID" Type="tblEmployer" IsForeignKey="true" />
-      <Association Name="tblJob_tblAddress" Member="tblJob" ThisKey="AddressID" OtherKey="AddressID" Type="tblJob" IsForeignKey="true" />
+  <Table Name="dbo.tblClinicianType" Member="tblClinicianTypes">
+    <Type Name="tblClinicianType">
+      <Column Name="ClinicianTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblClinicianType_tblClinician" Member="tblClinicians" ThisKey="ClinicianTypeID" OtherKey="ClinicianTypeID" Type="tblClinician" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClinicianLanguage" Member="tblClinicianLanguages">
+    <Type Name="tblClinicianLanguage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdateBy" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblClinicianLanguage_tblClinician" Member="tblClinicians" ThisKey="ClinicianID" OtherKey="ClinicianID" Type="tblClinician" />
+      <Association Name="tblLanguage_tblClinicianLanguage" Member="tblLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblLanguage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAvailability" Member="tblAvailabilities">
+    <Type Name="tblAvailability">
+      <Column Name="AvailabilityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblAvailability_tblClinician" Member="tblClinicians" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblClinician" />
+      <Association Name="tblAvailability_tblJob" Member="tblJobs" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblJob" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblClinicianDocuments" Member="tblClinicianDocuments">
+    <Type Name="tblClinicianDocument">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblClinicianDocument_tblClinician" Member="tblClinicians" ThisKey="ID" OtherKey="ClinicianDocumentID" Type="tblClinician" />
+      <Association Name="tblDocumentType_tblClinicianDocument" Member="tblDocumentType" ThisKey="DocumentTypeID" OtherKey="DocumentTypeID" Type="tblDocumentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocumentType" Member="tblDocumentTypes">
+    <Type Name="tblDocumentType">
+      <Column Name="DocumentTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblDocumentType_tblClinicianDocument" Member="tblClinicianDocuments" ThisKey="DocumentTypeID" OtherKey="DocumentTypeID" Type="tblClinicianDocument" />
+      <Association Name="tblDocumentType_tblEmployerDocument" Member="tblEmployerDocuments" ThisKey="DocumentTypeID" OtherKey="DocumentTypeID" Type="tblEmployerDocument" />
     </Type>
   </Table>
   <Table Name="dbo.tblEmployer" Member="tblEmployers">
@@ -48,8 +160,42 @@
       <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DocumentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EmployerTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblEmployer_tblAddress" Member="tblAddresses" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" />
-      <Association Name="tblEmployer_tblEmployerClinicianStatus" Member="tblEmployerClinicianStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployerClinicianStatus" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblEmployer_tblEmployerDocument" Member="tblEmployerDocuments" ThisKey="EmployerID" OtherKey="EmployerID" Type="tblEmployerDocument" />
+      <Association Name="tblEmployerClinicianStatus_tblEmployer" Member="tblEmployerClinicianStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployerClinicianStatus" IsForeignKey="true" />
+      <Association Name="tblAddress_tblEmployer" Member="tblAddress" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmployerDocuments" Member="tblEmployerDocuments">
+    <Type Name="tblEmployerDocument">
+      <Column Name="EmployerDocumentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Association Name="tblDocumentType_tblEmployerDocument" Member="tblDocumentType" ThisKey="DocumentTypeID" OtherKey="DocumentTypeID" Type="tblDocumentType" IsForeignKey="true" />
+      <Association Name="tblEmployer_tblEmployerDocument" Member="tblEmployer" ThisKey="EmployerID" OtherKey="EmployerID" Type="tblEmployer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmrErxExperienceType" Member="tblEmrErxExperienceTypes">
+    <Type Name="tblEmrErxExperienceType">
+      <Column Name="EmrErxExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEmrErxExperienceType_tblJob" Member="tblJobs" ThisKey="EmrErxExperienceTypeID" OtherKey="EmrErxExperienceTypeID" Type="tblJob" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGeneralStatus" Member="tblGeneralStatus">
+    <Type Name="tblGeneralStatus">
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblGeneralStatus_tblJobClinicianMatch" Member="tblJobClinicianMatches" ThisKey="StatusID" OtherKey="StatusID" Type="tblJobClinicianMatch" />
+      <Association Name="tblGeneralStatus_tblJob" Member="tblJobs" ThisKey="StatusID" OtherKey="StatusID" Type="tblJob" />
     </Type>
   </Table>
   <Table Name="dbo.tblAdminUsers" Member="tblAdminUsers">
@@ -65,20 +211,25 @@
       <Column Name="RegistrationDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tblAvailability" Member="tblAvailabilities">
-    <Type Name="tblAvailability">
-      <Column Name="AvailabilityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblAvailability" Member="tblJob" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblJob" IsForeignKey="true" />
+  <Table Name="dbo.tblJobClinicianMatch" Member="tblJobClinicianMatches">
+    <Type Name="tblJobClinicianMatch">
+      <Column Name="JobClinicianMatchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdatedBy" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblGeneralStatus_tblJobClinicianMatch" Member="tblGeneralStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblGeneralStatus" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblJobs" Member="tblJobs">
     <Type Name="tblJob">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
-      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="YearsExpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EmployerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PosterUserID" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
@@ -86,88 +237,20 @@
       <Column Name="PositionTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PatientPopulationType" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="SalaryRange" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SalaryRangeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EmrErxExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AvailabilityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblPositionType" Member="tblPositionTypes" ThisKey="PositionTypeID" OtherKey="PositionTypeID" Type="tblPositionType" />
-      <Association Name="tblJob_tblServiceType" Member="tblServiceTypes" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="tblServiceType" />
-      <Association Name="tblJob_tblAvailability" Member="tblAvailabilities" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblAvailability" />
-      <Association Name="tblJob_tblYearsExperience" Member="tblYearsExperiences" ThisKey="YearsExpID" OtherKey="YearExpID" Type="tblYearsExperience" />
-      <Association Name="tblJob_tblAddress" Member="tblAddresses" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" />
-      <Association Name="tblJob_tblJobJobExperienceType" Member="tblJobJobExperienceTypes" ThisKey="ID" OtherKey="JobID" Type="tblJobJobExperienceType" />
-      <Association Name="tblJob_tblJobPatientPopulationType" Member="tblJobPatientPopulationTypes" ThisKey="ID" OtherKey="JobID" Type="tblJobPatientPopulationType" />
-      <Association Name="tblJob_tblJobLanguage" Member="tblJobLanguages" ThisKey="ID" OtherKey="JobID" Type="tblJobLanguage" />
-      <Association Name="tblJob_tblGeneralStatus" Member="tblGeneralStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblGeneralStatus" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblClinicianLanguage" Member="tblClinicianLanguages">
-    <Type Name="tblClinicianLanguage">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblClinicianLanguage_tblLanguage" Member="tblLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblLanguage" />
-      <Association Name="tblClinician_tblClinicianLanguage" Member="tblClinician" ThisKey="ClinicianID" OtherKey="ClinicianID" Type="tblClinician" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblLanguages" Member="tblLanguages">
-    <Type Name="tblLanguage">
-      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Language" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblClinicianLanguage_tblLanguage" Member="tblClinicianLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblClinicianLanguage" IsForeignKey="true" />
-      <Association Name="tblJobLanguage_tblLanguage" Member="tblJobLanguage" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblJobLanguage" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblPositionType" Member="tblPositionTypes">
-    <Type Name="tblPositionType">
-      <Column Name="PositionTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblPositionType" Member="tblJob" ThisKey="PositionTypeID" OtherKey="PositionTypeID" Type="tblJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblServiceType" Member="tblServiceTypes">
-    <Type Name="tblServiceType">
-      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblServiceType" Member="tblJob" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="tblJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblYearsExperience" Member="tblYearsExperiences">
-    <Type Name="tblYearsExperience">
-      <Column Name="YearExpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblYearsExperience" Member="tblJob" ThisKey="YearExpID" OtherKey="YearsExpID" Type="tblJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblJobJobExperienceType" Member="tblJobJobExperienceTypes">
-    <Type Name="tblJobJobExperienceType">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="JobExperienceType" Member="JobExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="tblJobJobExperienceType_tblJobExperienceType" Member="tblJobExperienceTypes" ThisKey="JobExperienceTypeID" OtherKey="JobExperienceTypeID" Type="tblJobExperienceType" />
-      <Association Name="tblJob_tblJobJobExperienceType" Member="tblJob" ThisKey="JobID" OtherKey="ID" Type="tblJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblJobLanguage" Member="tblJobLanguages">
-    <Type Name="tblJobLanguage">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJobLanguage_tblLanguage" Member="tblLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="tblLanguage" />
-      <Association Name="tblJob_tblJobLanguage" Member="tblJob" ThisKey="JobID" OtherKey="ID" Type="tblJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblJobExperienceType" Member="tblJobExperienceTypes">
-    <Type Name="tblJobExperienceType">
-      <Column Name="JobExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJobJobExperienceType_tblJobExperienceType" Member="tblJobJobExperienceType" ThisKey="JobExperienceTypeID" OtherKey="JobExperienceTypeID" Type="tblJobJobExperienceType" IsForeignKey="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="tblAvailability_tblJob" Member="tblAvailability" ThisKey="AvailabilityID" OtherKey="AvailabilityID" Type="tblAvailability" IsForeignKey="true" />
+      <Association Name="tblEmrErxExperienceType_tblJob" Member="tblEmrErxExperienceType" ThisKey="EmrErxExperienceTypeID" OtherKey="EmrErxExperienceTypeID" Type="tblEmrErxExperienceType" IsForeignKey="true" />
+      <Association Name="tblGeneralStatus_tblJob" Member="tblGeneralStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblGeneralStatus" IsForeignKey="true" />
+      <Association Name="tblPositionType_tblJob" Member="tblPositionType" ThisKey="PositionTypeID" OtherKey="PositionTypeID" Type="tblPositionType" IsForeignKey="true" />
+      <Association Name="tblServiceType_tblJob" Member="tblServiceType" ThisKey="ServiceTypeID" OtherKey="ServiceTypeID" Type="tblServiceType" IsForeignKey="true" />
+      <Association Name="tblYearsExperience_tblJob" Member="tblYearsExperience" ThisKey="YearsExpID" OtherKey="YearExpID" Type="tblYearsExperience" IsForeignKey="true" />
+      <Association Name="tblJobPatientPopulationType_tblJob" Member="tblJobPatientPopulationType" ThisKey="JobID" OtherKey="JobID" Type="tblJobPatientPopulationType" IsForeignKey="true" />
+      <Association Name="tblAddress_tblJob" Member="tblAddress" ThisKey="AddressID" OtherKey="AddressID" Type="tblAddress" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblJobPatientPopulationType" Member="tblJobPatientPopulationTypes">
@@ -175,8 +258,8 @@
       <Column Name="JobPatientPopulationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="PatientPopulationTypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="tblJobPatientPopulationType_tblPatientPopulationType" Member="tblPatientPopulationTypes" ThisKey="PatientPopulationTypeID" OtherKey="PatientPopulationTypeID" Type="tblPatientPopulationType" />
-      <Association Name="tblJob_tblJobPatientPopulationType" Member="tblJob" ThisKey="JobID" OtherKey="ID" Type="tblJob" IsForeignKey="true" />
+      <Association Name="tblJobPatientPopulationType_tblJob" Member="tblJobs" ThisKey="JobID" OtherKey="JobID" Type="tblJob" />
+      <Association Name="tblPatientPopulationType_tblJobPatientPopulationType" Member="tblPatientPopulationType" ThisKey="PatientPopulationTypeID" OtherKey="PatientPopulationTypeID" Type="tblPatientPopulationType" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblPatientPopulationType" Member="tblPatientPopulationTypes">
@@ -184,49 +267,24 @@
       <Column Name="PatientPopulationTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblJobPatientPopulationType_tblPatientPopulationType" Member="tblJobPatientPopulationType" ThisKey="PatientPopulationTypeID" OtherKey="PatientPopulationTypeID" Type="tblJobPatientPopulationType" IsForeignKey="true" />
+      <Association Name="tblPatientPopulationType_tblJobPatientPopulationType" Member="tblJobPatientPopulationTypes" ThisKey="PatientPopulationTypeID" OtherKey="PatientPopulationTypeID" Type="tblJobPatientPopulationType" />
     </Type>
   </Table>
-  <Table Name="dbo.tblClinicianType" Member="tblClinicianTypes">
-    <Type Name="tblClinicianType">
-      <Column Name="ClinicianTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblClinician_tblClinicianType" Member="tblClinician" ThisKey="ClinicianTypeID" OtherKey="ClinicianTypeID" Type="tblClinician" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblEmrErxExperienceType" Member="tblEmrErxExperienceTypes">
-    <Type Name="tblEmrErxExperienceType">
-      <Column Name="EmrErxExperienceTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Value" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblEmployerClinicianStatus" Member="tblEmployerClinicianStatus">
-    <Type Name="tblEmployerClinicianStatus">
-      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="[Order]" Member="Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblClinician_tblEmployerClinicianStatus" Member="tblClinician" ThisKey="StatusID" OtherKey="StatusID" Type="tblClinician" IsForeignKey="true" />
-      <Association Name="tblEmployer_tblEmployerClinicianStatus" Member="tblEmployer" ThisKey="StatusID" OtherKey="StatusID" Type="tblEmployer" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblGeneralStatus" Member="tblGeneralStatus">
-    <Type Name="tblGeneralStatus">
-      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Association Name="tblJob_tblGeneralStatus" Member="tblJob" ThisKey="StatusID" OtherKey="StatusID" Type="tblJob" IsForeignKey="true" />
-      <Association Name="tblClinicianJob_tblGeneralStatus" Member="tblClinicianJob" ThisKey="StatusID" OtherKey="StatusID" Type="tblClinicianJob" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblClinicianJobs" Member="tblClinicianJobs">
-    <Type Name="tblClinicianJob">
-      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="JobID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MatchDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="MatchBy" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Association Name="tblClinicianJob_tblGeneralStatus" Member="tblGeneralStatus" ThisKey="StatusID" OtherKey="StatusID" Type="tblGeneralStatus" />
+  <Table Name="dbo.tblAddress" Member="tblAddresses">
+    <Type Name="tblAddress">
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddressLine1" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AddressLine2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Association Name="tblAddress_tblClinician" Member="tblClinicians" ThisKey="AddressID" OtherKey="AddressID" Type="tblClinician" />
+      <Association Name="tblAddress_tblEmployer" Member="tblEmployers" ThisKey="AddressID" OtherKey="AddressID" Type="tblEmployer" />
+      <Association Name="tblAddress_tblJob" Member="tblJobs" ThisKey="AddressID" OtherKey="AddressID" Type="tblJob" />
     </Type>
   </Table>
 </Database>

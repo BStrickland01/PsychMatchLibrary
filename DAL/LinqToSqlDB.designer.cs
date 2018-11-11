@@ -30,24 +30,6 @@ namespace PSL.DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InserttblClinician(tblClinician instance);
-    partial void UpdatetblClinician(tblClinician instance);
-    partial void DeletetblClinician(tblClinician instance);
-    partial void InserttblAddress(tblAddress instance);
-    partial void UpdatetblAddress(tblAddress instance);
-    partial void DeletetblAddress(tblAddress instance);
-    partial void InserttblEmployer(tblEmployer instance);
-    partial void UpdatetblEmployer(tblEmployer instance);
-    partial void DeletetblEmployer(tblEmployer instance);
-    partial void InserttblAdminUser(tblAdminUser instance);
-    partial void UpdatetblAdminUser(tblAdminUser instance);
-    partial void DeletetblAdminUser(tblAdminUser instance);
-    partial void InserttblAvailability(tblAvailability instance);
-    partial void UpdatetblAvailability(tblAvailability instance);
-    partial void DeletetblAvailability(tblAvailability instance);
-    partial void InserttblJob(tblJob instance);
-    partial void UpdatetblJob(tblJob instance);
-    partial void DeletetblJob(tblJob instance);
     partial void InserttblLanguage(tblLanguage instance);
     partial void UpdatetblLanguage(tblLanguage instance);
     partial void DeletetblLanguage(tblLanguage instance);
@@ -69,24 +51,57 @@ namespace PSL.DAL
     partial void InserttblJobExperienceType(tblJobExperienceType instance);
     partial void UpdatetblJobExperienceType(tblJobExperienceType instance);
     partial void DeletetblJobExperienceType(tblJobExperienceType instance);
+    partial void InserttblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
+    partial void UpdatetblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
+    partial void DeletetblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
+    partial void InserttblClinician(tblClinician instance);
+    partial void UpdatetblClinician(tblClinician instance);
+    partial void DeletetblClinician(tblClinician instance);
+    partial void InserttblClinicianType(tblClinicianType instance);
+    partial void UpdatetblClinicianType(tblClinicianType instance);
+    partial void DeletetblClinicianType(tblClinicianType instance);
+    partial void InserttblClinicianLanguage(tblClinicianLanguage instance);
+    partial void UpdatetblClinicianLanguage(tblClinicianLanguage instance);
+    partial void DeletetblClinicianLanguage(tblClinicianLanguage instance);
+    partial void InserttblAvailability(tblAvailability instance);
+    partial void UpdatetblAvailability(tblAvailability instance);
+    partial void DeletetblAvailability(tblAvailability instance);
+    partial void InserttblClinicianDocument(tblClinicianDocument instance);
+    partial void UpdatetblClinicianDocument(tblClinicianDocument instance);
+    partial void DeletetblClinicianDocument(tblClinicianDocument instance);
+    partial void InserttblDocumentType(tblDocumentType instance);
+    partial void UpdatetblDocumentType(tblDocumentType instance);
+    partial void DeletetblDocumentType(tblDocumentType instance);
+    partial void InserttblEmployer(tblEmployer instance);
+    partial void UpdatetblEmployer(tblEmployer instance);
+    partial void DeletetblEmployer(tblEmployer instance);
+    partial void InserttblEmployerDocument(tblEmployerDocument instance);
+    partial void UpdatetblEmployerDocument(tblEmployerDocument instance);
+    partial void DeletetblEmployerDocument(tblEmployerDocument instance);
+    partial void InserttblEmrErxExperienceType(tblEmrErxExperienceType instance);
+    partial void UpdatetblEmrErxExperienceType(tblEmrErxExperienceType instance);
+    partial void DeletetblEmrErxExperienceType(tblEmrErxExperienceType instance);
+    partial void InserttblGeneralStatus(tblGeneralStatus instance);
+    partial void UpdatetblGeneralStatus(tblGeneralStatus instance);
+    partial void DeletetblGeneralStatus(tblGeneralStatus instance);
+    partial void InserttblAdminUser(tblAdminUser instance);
+    partial void UpdatetblAdminUser(tblAdminUser instance);
+    partial void DeletetblAdminUser(tblAdminUser instance);
+    partial void InserttblJobClinicianMatch(tblJobClinicianMatch instance);
+    partial void UpdatetblJobClinicianMatch(tblJobClinicianMatch instance);
+    partial void DeletetblJobClinicianMatch(tblJobClinicianMatch instance);
+    partial void InserttblJob(tblJob instance);
+    partial void UpdatetblJob(tblJob instance);
+    partial void DeletetblJob(tblJob instance);
     partial void InserttblJobPatientPopulationType(tblJobPatientPopulationType instance);
     partial void UpdatetblJobPatientPopulationType(tblJobPatientPopulationType instance);
     partial void DeletetblJobPatientPopulationType(tblJobPatientPopulationType instance);
     partial void InserttblPatientPopulationType(tblPatientPopulationType instance);
     partial void UpdatetblPatientPopulationType(tblPatientPopulationType instance);
     partial void DeletetblPatientPopulationType(tblPatientPopulationType instance);
-    partial void InserttblClinicianType(tblClinicianType instance);
-    partial void UpdatetblClinicianType(tblClinicianType instance);
-    partial void DeletetblClinicianType(tblClinicianType instance);
-    partial void InserttblEmrErxExperienceType(tblEmrErxExperienceType instance);
-    partial void UpdatetblEmrErxExperienceType(tblEmrErxExperienceType instance);
-    partial void DeletetblEmrErxExperienceType(tblEmrErxExperienceType instance);
-    partial void InserttblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
-    partial void UpdatetblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
-    partial void DeletetblEmployerClinicianStatus(tblEmployerClinicianStatus instance);
-    partial void InserttblGeneralStatus(tblGeneralStatus instance);
-    partial void UpdatetblGeneralStatus(tblGeneralStatus instance);
-    partial void DeletetblGeneralStatus(tblGeneralStatus instance);
+    partial void InserttblAddress(tblAddress instance);
+    partial void UpdatetblAddress(tblAddress instance);
+    partial void DeletetblAddress(tblAddress instance);
     #endregion
 		
 		public LinqToSqlDBDataContext() : 
@@ -117,62 +132,6 @@ namespace PSL.DAL
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<tblClinician> tblClinicians
-		{
-			get
-			{
-				return this.GetTable<tblClinician>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblAddress> tblAddresses
-		{
-			get
-			{
-				return this.GetTable<tblAddress>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblEmployer> tblEmployers
-		{
-			get
-			{
-				return this.GetTable<tblEmployer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblAdminUser> tblAdminUsers
-		{
-			get
-			{
-				return this.GetTable<tblAdminUser>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblAvailability> tblAvailabilities
-		{
-			get
-			{
-				return this.GetTable<tblAvailability>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblJob> tblJobs
-		{
-			get
-			{
-				return this.GetTable<tblJob>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblClinicianLanguage> tblClinicianLanguages
-		{
-			get
-			{
-				return this.GetTable<tblClinicianLanguage>();
-			}
 		}
 		
 		public System.Data.Linq.Table<tblLanguage> tblLanguages
@@ -231,6 +190,118 @@ namespace PSL.DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<tblEmployerClinicianStatus> tblEmployerClinicianStatus
+		{
+			get
+			{
+				return this.GetTable<tblEmployerClinicianStatus>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this.GetTable<tblClinician>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblClinicianType> tblClinicianTypes
+		{
+			get
+			{
+				return this.GetTable<tblClinicianType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblClinicianLanguage> tblClinicianLanguages
+		{
+			get
+			{
+				return this.GetTable<tblClinicianLanguage>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblAvailability> tblAvailabilities
+		{
+			get
+			{
+				return this.GetTable<tblAvailability>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblClinicianDocument> tblClinicianDocuments
+		{
+			get
+			{
+				return this.GetTable<tblClinicianDocument>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblDocumentType> tblDocumentTypes
+		{
+			get
+			{
+				return this.GetTable<tblDocumentType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblEmployer> tblEmployers
+		{
+			get
+			{
+				return this.GetTable<tblEmployer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblEmployerDocument> tblEmployerDocuments
+		{
+			get
+			{
+				return this.GetTable<tblEmployerDocument>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblEmrErxExperienceType> tblEmrErxExperienceTypes
+		{
+			get
+			{
+				return this.GetTable<tblEmrErxExperienceType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblGeneralStatus> tblGeneralStatus
+		{
+			get
+			{
+				return this.GetTable<tblGeneralStatus>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblAdminUser> tblAdminUsers
+		{
+			get
+			{
+				return this.GetTable<tblAdminUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblJobClinicianMatch> tblJobClinicianMatches
+		{
+			get
+			{
+				return this.GetTable<tblJobClinicianMatch>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblJob> tblJobs
+		{
+			get
+			{
+				return this.GetTable<tblJob>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tblJobPatientPopulationType> tblJobPatientPopulationTypes
 		{
 			get
@@ -247,44 +318,1226 @@ namespace PSL.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<tblClinicianType> tblClinicianTypes
+		public System.Data.Linq.Table<tblAddress> tblAddresses
 		{
 			get
 			{
-				return this.GetTable<tblClinicianType>();
+				return this.GetTable<tblAddress>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLanguages")]
+	public partial class tblLanguage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LanguageID;
+		
+		private string _Language;
+		
+		private System.Nullable<int> _Order;
+		
+		private EntitySet<tblClinicianLanguage> _tblClinicianLanguages;
+		
+		private EntityRef<tblJobLanguage> _tblJobLanguage;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLanguageIDChanging(int value);
+    partial void OnLanguageIDChanged();
+    partial void OnLanguageChanging(string value);
+    partial void OnLanguageChanged();
+    partial void OnOrderChanging(System.Nullable<int> value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblLanguage()
+		{
+			this._tblClinicianLanguages = new EntitySet<tblClinicianLanguage>(new Action<tblClinicianLanguage>(this.attach_tblClinicianLanguages), new Action<tblClinicianLanguage>(this.detach_tblClinicianLanguages));
+			this._tblJobLanguage = default(EntityRef<tblJobLanguage>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LanguageID
+		{
+			get
+			{
+				return this._LanguageID;
+			}
+			set
+			{
+				if ((this._LanguageID != value))
+				{
+					if (this._tblJobLanguage.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnLanguageIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageID = value;
+					this.SendPropertyChanged("LanguageID");
+					this.OnLanguageIDChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<tblEmrErxExperienceType> tblEmrErxExperienceTypes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Language", DbType="VarChar(25)")]
+		public string Language
 		{
 			get
 			{
-				return this.GetTable<tblEmrErxExperienceType>();
+				return this._Language;
+			}
+			set
+			{
+				if ((this._Language != value))
+				{
+					this.OnLanguageChanging(value);
+					this.SendPropertyChanging();
+					this._Language = value;
+					this.SendPropertyChanged("Language");
+					this.OnLanguageChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<tblEmployerClinicianStatus> tblEmployerClinicianStatus
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
+		public System.Nullable<int> Order
 		{
 			get
 			{
-				return this.GetTable<tblEmployerClinicianStatus>();
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<tblGeneralStatus> tblGeneralStatus
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLanguage_tblClinicianLanguage", Storage="_tblClinicianLanguages", ThisKey="LanguageID", OtherKey="LanguageID")]
+		public EntitySet<tblClinicianLanguage> tblClinicianLanguages
 		{
 			get
 			{
-				return this.GetTable<tblGeneralStatus>();
+				return this._tblClinicianLanguages;
+			}
+			set
+			{
+				this._tblClinicianLanguages.Assign(value);
 			}
 		}
 		
-		public System.Data.Linq.Table<tblClinicianJob> tblClinicianJobs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobLanguage_tblLanguage", Storage="_tblJobLanguage", ThisKey="LanguageID", OtherKey="LanguageID", IsForeignKey=true)]
+		public tblJobLanguage tblJobLanguage
 		{
 			get
 			{
-				return this.GetTable<tblClinicianJob>();
+				return this._tblJobLanguage.Entity;
 			}
+			set
+			{
+				tblJobLanguage previousValue = this._tblJobLanguage.Entity;
+				if (((previousValue != value) 
+							|| (this._tblJobLanguage.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblJobLanguage.Entity = null;
+						previousValue.tblLanguages.Remove(this);
+					}
+					this._tblJobLanguage.Entity = value;
+					if ((value != null))
+					{
+						value.tblLanguages.Add(this);
+						this._LanguageID = value.LanguageID;
+					}
+					else
+					{
+						this._LanguageID = default(int);
+					}
+					this.SendPropertyChanged("tblJobLanguage");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicianLanguages(tblClinicianLanguage entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLanguage = this;
+		}
+		
+		private void detach_tblClinicianLanguages(tblClinicianLanguage entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblLanguage = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblPositionType")]
+	public partial class tblPositionType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PositionTypeID;
+		
+		private string _Value;
+		
+		private int _Order;
+		
+		private EntitySet<tblJob> _tblJobs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPositionTypeIDChanging(int value);
+    partial void OnPositionTypeIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblPositionType()
+		{
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PositionTypeID
+		{
+			get
+			{
+				return this._PositionTypeID;
+			}
+			set
+			{
+				if ((this._PositionTypeID != value))
+				{
+					this.OnPositionTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._PositionTypeID = value;
+					this.SendPropertyChanged("PositionTypeID");
+					this.OnPositionTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPositionType_tblJob", Storage="_tblJobs", ThisKey="PositionTypeID", OtherKey="PositionTypeID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblPositionType = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblPositionType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblServiceType")]
+	public partial class tblServiceType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ServiceTypeID;
+		
+		private string _Value;
+		
+		private int _Order;
+		
+		private EntitySet<tblJob> _tblJobs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnServiceTypeIDChanging(int value);
+    partial void OnServiceTypeIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblServiceType()
+		{
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ServiceTypeID
+		{
+			get
+			{
+				return this._ServiceTypeID;
+			}
+			set
+			{
+				if ((this._ServiceTypeID != value))
+				{
+					this.OnServiceTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ServiceTypeID = value;
+					this.SendPropertyChanged("ServiceTypeID");
+					this.OnServiceTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblServiceType_tblJob", Storage="_tblJobs", ThisKey="ServiceTypeID", OtherKey="ServiceTypeID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblServiceType = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblServiceType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblYearsExperience")]
+	public partial class tblYearsExperience : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _YearExpID;
+		
+		private string _Value;
+		
+		private int _Order;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+		private EntitySet<tblJob> _tblJobs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnYearExpIDChanging(int value);
+    partial void OnYearExpIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblYearsExperience()
+		{
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearExpID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int YearExpID
+		{
+			get
+			{
+				return this._YearExpID;
+			}
+			set
+			{
+				if ((this._YearExpID != value))
+				{
+					this.OnYearExpIDChanging(value);
+					this.SendPropertyChanging();
+					this._YearExpID = value;
+					this.SendPropertyChanged("YearExpID");
+					this.OnYearExpIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(7) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblYearsExperience_tblClinician", Storage="_tblClinicians", ThisKey="YearExpID", OtherKey="YearsExpID")]
+		public EntitySet<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this._tblClinicians;
+			}
+			set
+			{
+				this._tblClinicians.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblYearsExperience_tblJob", Storage="_tblJobs", ThisKey="YearExpID", OtherKey="YearsExpID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblYearsExperience = this;
+		}
+		
+		private void detach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblYearsExperience = null;
+		}
+		
+		private void attach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblYearsExperience = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblYearsExperience = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobJobExperienceType")]
+	public partial class tblJobJobExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _JobID;
+		
+		private int _JobExperienceTypeID;
+		
+		private EntitySet<tblJobExperienceType> _tblJobExperienceTypes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnJobIDChanging(int value);
+    partial void OnJobIDChanged();
+    partial void OnJobExperienceTypeIDChanging(int value);
+    partial void OnJobExperienceTypeIDChanged();
+    #endregion
+		
+		public tblJobJobExperienceType()
+		{
+			this._tblJobExperienceTypes = new EntitySet<tblJobExperienceType>(new Action<tblJobExperienceType>(this.attach_tblJobExperienceTypes), new Action<tblJobExperienceType>(this.detach_tblJobExperienceTypes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int JobID
+		{
+			get
+			{
+				return this._JobID;
+			}
+			set
+			{
+				if ((this._JobID != value))
+				{
+					this.OnJobIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobID = value;
+					this.SendPropertyChanged("JobID");
+					this.OnJobIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="JobExperienceType", Storage="_JobExperienceTypeID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int JobExperienceTypeID
+		{
+			get
+			{
+				return this._JobExperienceTypeID;
+			}
+			set
+			{
+				if ((this._JobExperienceTypeID != value))
+				{
+					this.OnJobExperienceTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobExperienceTypeID = value;
+					this.SendPropertyChanged("JobExperienceTypeID");
+					this.OnJobExperienceTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobJobExperienceType_tblJobExperienceType", Storage="_tblJobExperienceTypes", ThisKey="JobExperienceTypeID", OtherKey="JobExperienceTypeID")]
+		public EntitySet<tblJobExperienceType> tblJobExperienceTypes
+		{
+			get
+			{
+				return this._tblJobExperienceTypes;
+			}
+			set
+			{
+				this._tblJobExperienceTypes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblJobExperienceTypes(tblJobExperienceType entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblJobJobExperienceType = this;
+		}
+		
+		private void detach_tblJobExperienceTypes(tblJobExperienceType entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblJobJobExperienceType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobLanguage")]
+	public partial class tblJobLanguage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _JobID;
+		
+		private int _LanguageID;
+		
+		private EntitySet<tblLanguage> _tblLanguages;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnJobIDChanging(int value);
+    partial void OnJobIDChanged();
+    partial void OnLanguageIDChanging(int value);
+    partial void OnLanguageIDChanged();
+    #endregion
+		
+		public tblJobLanguage()
+		{
+			this._tblLanguages = new EntitySet<tblLanguage>(new Action<tblLanguage>(this.attach_tblLanguages), new Action<tblLanguage>(this.detach_tblLanguages));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL")]
+		public int JobID
+		{
+			get
+			{
+				return this._JobID;
+			}
+			set
+			{
+				if ((this._JobID != value))
+				{
+					this.OnJobIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobID = value;
+					this.SendPropertyChanged("JobID");
+					this.OnJobIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", DbType="Int NOT NULL")]
+		public int LanguageID
+		{
+			get
+			{
+				return this._LanguageID;
+			}
+			set
+			{
+				if ((this._LanguageID != value))
+				{
+					this.OnLanguageIDChanging(value);
+					this.SendPropertyChanging();
+					this._LanguageID = value;
+					this.SendPropertyChanged("LanguageID");
+					this.OnLanguageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobLanguage_tblLanguage", Storage="_tblLanguages", ThisKey="LanguageID", OtherKey="LanguageID")]
+		public EntitySet<tblLanguage> tblLanguages
+		{
+			get
+			{
+				return this._tblLanguages;
+			}
+			set
+			{
+				this._tblLanguages.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblLanguages(tblLanguage entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblJobLanguage = this;
+		}
+		
+		private void detach_tblLanguages(tblLanguage entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblJobLanguage = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobExperienceType")]
+	public partial class tblJobExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _JobExperienceTypeID;
+		
+		private string _Value;
+		
+		private int _Order;
+		
+		private EntityRef<tblJobJobExperienceType> _tblJobJobExperienceType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnJobExperienceTypeIDChanging(int value);
+    partial void OnJobExperienceTypeIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblJobExperienceType()
+		{
+			this._tblJobJobExperienceType = default(EntityRef<tblJobJobExperienceType>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobExperienceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int JobExperienceTypeID
+		{
+			get
+			{
+				return this._JobExperienceTypeID;
+			}
+			set
+			{
+				if ((this._JobExperienceTypeID != value))
+				{
+					if (this._tblJobJobExperienceType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnJobExperienceTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobExperienceTypeID = value;
+					this.SendPropertyChanged("JobExperienceTypeID");
+					this.OnJobExperienceTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobJobExperienceType_tblJobExperienceType", Storage="_tblJobJobExperienceType", ThisKey="JobExperienceTypeID", OtherKey="JobExperienceTypeID", IsForeignKey=true)]
+		public tblJobJobExperienceType tblJobJobExperienceType
+		{
+			get
+			{
+				return this._tblJobJobExperienceType.Entity;
+			}
+			set
+			{
+				tblJobJobExperienceType previousValue = this._tblJobJobExperienceType.Entity;
+				if (((previousValue != value) 
+							|| (this._tblJobJobExperienceType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblJobJobExperienceType.Entity = null;
+						previousValue.tblJobExperienceTypes.Remove(this);
+					}
+					this._tblJobJobExperienceType.Entity = value;
+					if ((value != null))
+					{
+						value.tblJobExperienceTypes.Add(this);
+						this._JobExperienceTypeID = value.JobExperienceTypeID;
+					}
+					else
+					{
+						this._JobExperienceTypeID = default(int);
+					}
+					this.SendPropertyChanged("tblJobJobExperienceType");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployerClinicianStatus")]
+	public partial class tblEmployerClinicianStatus : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _StatusID;
+		
+		private string _Status;
+		
+		private System.Nullable<int> _Order;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+		private EntitySet<tblEmployer> _tblEmployers;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStatusIDChanging(int value);
+    partial void OnStatusIDChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnOrderChanging(System.Nullable<int> value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblEmployerClinicianStatus()
+		{
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblEmployers = new EntitySet<tblEmployer>(new Action<tblEmployer>(this.attach_tblEmployers), new Action<tblEmployer>(this.detach_tblEmployers));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int StatusID
+		{
+			get
+			{
+				return this._StatusID;
+			}
+			set
+			{
+				if ((this._StatusID != value))
+				{
+					this.OnStatusIDChanging(value);
+					this.SendPropertyChanging();
+					this._StatusID = value;
+					this.SendPropertyChanged("StatusID");
+					this.OnStatusIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
+		public System.Nullable<int> Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployerClinicianStatus_tblClinician", Storage="_tblClinicians", ThisKey="StatusID", OtherKey="StatusID")]
+		public EntitySet<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this._tblClinicians;
+			}
+			set
+			{
+				this._tblClinicians.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployerClinicianStatus_tblEmployer", Storage="_tblEmployers", ThisKey="StatusID", OtherKey="StatusID")]
+		public EntitySet<tblEmployer> tblEmployers
+		{
+			get
+			{
+				return this._tblEmployers;
+			}
+			set
+			{
+				this._tblEmployers.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployerClinicianStatus = this;
+		}
+		
+		private void detach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployerClinicianStatus = null;
+		}
+		
+		private void attach_tblEmployers(tblEmployer entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployerClinicianStatus = this;
+		}
+		
+		private void detach_tblEmployers(tblEmployer entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmployerClinicianStatus = null;
 		}
 	}
 	
@@ -308,25 +1561,39 @@ namespace PSL.DAL
 		
 		private string _EmailAddress;
 		
+		private System.Nullable<int> _YearsExpID;
+		
 		private string _PhoneNumber;
 		
 		private System.DateTime _RegistrationDate;
 		
 		private int _ClinicianTypeID;
 		
+		private int _AvailabilityID;
+		
 		private int _StatusID;
 		
 		private int _AddressID;
 		
-		private int _LanguageID;
+		private System.Nullable<int> _ClinicianDocumentID;
 		
-		private int _LiscenseID;
+		private System.DateTime _LastModifiedDate;
 		
-		private EntitySet<tblAddress> _tblAddresses;
+		private string _LastModifiedBy;
 		
-		private EntitySet<tblClinicianType> _tblClinicianTypes;
+		private EntityRef<tblEmployerClinicianStatus> _tblEmployerClinicianStatus;
 		
-		private EntitySet<tblEmployerClinicianStatus> _tblEmployerClinicianStatus;
+		private EntityRef<tblYearsExperience> _tblYearsExperience;
+		
+		private EntityRef<tblClinicianType> _tblClinicianType;
+		
+		private EntityRef<tblAvailability> _tblAvailability;
+		
+		private EntityRef<tblClinicianDocument> _tblClinicianDocument;
+		
+		private EntityRef<tblClinicianLanguage> _tblClinicianLanguage;
+		
+		private EntityRef<tblAddress> _tblAddress;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -346,27 +1613,37 @@ namespace PSL.DAL
     partial void OnMiddleNameChanged();
     partial void OnEmailAddressChanging(string value);
     partial void OnEmailAddressChanged();
+    partial void OnYearsExpIDChanging(System.Nullable<int> value);
+    partial void OnYearsExpIDChanged();
     partial void OnPhoneNumberChanging(string value);
     partial void OnPhoneNumberChanged();
     partial void OnRegistrationDateChanging(System.DateTime value);
     partial void OnRegistrationDateChanged();
     partial void OnClinicianTypeIDChanging(int value);
     partial void OnClinicianTypeIDChanged();
+    partial void OnAvailabilityIDChanging(int value);
+    partial void OnAvailabilityIDChanged();
     partial void OnStatusIDChanging(int value);
     partial void OnStatusIDChanged();
     partial void OnAddressIDChanging(int value);
     partial void OnAddressIDChanged();
-    partial void OnLanguageIDChanging(int value);
-    partial void OnLanguageIDChanged();
-    partial void OnLiscenseIDChanging(int value);
-    partial void OnLiscenseIDChanged();
+    partial void OnClinicianDocumentIDChanging(System.Nullable<int> value);
+    partial void OnClinicianDocumentIDChanged();
+    partial void OnLastModifiedDateChanging(System.DateTime value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(string value);
+    partial void OnLastModifiedByChanged();
     #endregion
 		
 		public tblClinician()
 		{
-			this._tblAddresses = new EntitySet<tblAddress>(new Action<tblAddress>(this.attach_tblAddresses), new Action<tblAddress>(this.detach_tblAddresses));
-			this._tblClinicianTypes = new EntitySet<tblClinicianType>(new Action<tblClinicianType>(this.attach_tblClinicianTypes), new Action<tblClinicianType>(this.detach_tblClinicianTypes));
-			this._tblEmployerClinicianStatus = new EntitySet<tblEmployerClinicianStatus>(new Action<tblEmployerClinicianStatus>(this.attach_tblEmployerClinicianStatus), new Action<tblEmployerClinicianStatus>(this.detach_tblEmployerClinicianStatus));
+			this._tblEmployerClinicianStatus = default(EntityRef<tblEmployerClinicianStatus>);
+			this._tblYearsExperience = default(EntityRef<tblYearsExperience>);
+			this._tblClinicianType = default(EntityRef<tblClinicianType>);
+			this._tblAvailability = default(EntityRef<tblAvailability>);
+			this._tblClinicianDocument = default(EntityRef<tblClinicianDocument>);
+			this._tblClinicianLanguage = default(EntityRef<tblClinicianLanguage>);
+			this._tblAddress = default(EntityRef<tblAddress>);
 			OnCreated();
 		}
 		
@@ -381,6 +1658,10 @@ namespace PSL.DAL
 			{
 				if ((this._ClinicianID != value))
 				{
+					if (this._tblClinicianLanguage.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnClinicianIDChanging(value);
 					this.SendPropertyChanging();
 					this._ClinicianID = value;
@@ -410,7 +1691,7 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="VarChar(25) NOT NULL")]
 		public string UserID
 		{
 			get
@@ -510,6 +1791,30 @@ namespace PSL.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearsExpID", DbType="Int")]
+		public System.Nullable<int> YearsExpID
+		{
+			get
+			{
+				return this._YearsExpID;
+			}
+			set
+			{
+				if ((this._YearsExpID != value))
+				{
+					if (this._tblYearsExperience.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnYearsExpIDChanging(value);
+					this.SendPropertyChanging();
+					this._YearsExpID = value;
+					this.SendPropertyChanged("YearsExpID");
+					this.OnYearsExpIDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string PhoneNumber
 		{
@@ -561,11 +1866,39 @@ namespace PSL.DAL
 			{
 				if ((this._ClinicianTypeID != value))
 				{
+					if (this._tblClinicianType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnClinicianTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._ClinicianTypeID = value;
 					this.SendPropertyChanged("ClinicianTypeID");
 					this.OnClinicianTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailabilityID", DbType="Int NOT NULL")]
+		public int AvailabilityID
+		{
+			get
+			{
+				return this._AvailabilityID;
+			}
+			set
+			{
+				if ((this._AvailabilityID != value))
+				{
+					if (this._tblAvailability.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAvailabilityIDChanging(value);
+					this.SendPropertyChanging();
+					this._AvailabilityID = value;
+					this.SendPropertyChanged("AvailabilityID");
+					this.OnAvailabilityIDChanged();
 				}
 			}
 		}
@@ -581,6 +1914,10 @@ namespace PSL.DAL
 			{
 				if ((this._StatusID != value))
 				{
+					if (this._tblEmployerClinicianStatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStatusIDChanging(value);
 					this.SendPropertyChanging();
 					this._StatusID = value;
@@ -601,11 +1938,559 @@ namespace PSL.DAL
 			{
 				if ((this._AddressID != value))
 				{
+					if (this._tblAddress.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAddressIDChanging(value);
 					this.SendPropertyChanging();
 					this._AddressID = value;
 					this.SendPropertyChanged("AddressID");
 					this.OnAddressIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianDocumentID", DbType="Int NOT NULL")]
+		public System.Nullable<int> ClinicianDocumentID
+		{
+			get
+			{
+				return this._ClinicianDocumentID;
+			}
+			set
+			{
+				if ((this._ClinicianDocumentID != value))
+				{
+					if (this._tblClinicianDocument.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnClinicianDocumentIDChanging(value);
+					this.SendPropertyChanging();
+					this._ClinicianDocumentID = value;
+					this.SendPropertyChanged("ClinicianDocumentID");
+					this.OnClinicianDocumentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastModifiedDate
+		{
+			get
+			{
+				return this._LastModifiedDate;
+			}
+			set
+			{
+				if ((this._LastModifiedDate != value))
+				{
+					this.OnLastModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="varchar(25) NOT NULL", CanBeNull=false)]
+		public string LastModifiedBy
+		{
+			get
+			{
+				return this._LastModifiedBy;
+			}
+			set
+			{
+				if ((this._LastModifiedBy != value))
+				{
+					this.OnLastModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployerClinicianStatus_tblClinician", Storage="_tblEmployerClinicianStatus", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
+		public tblEmployerClinicianStatus tblEmployerClinicianStatus
+		{
+			get
+			{
+				return this._tblEmployerClinicianStatus.Entity;
+			}
+			set
+			{
+				tblEmployerClinicianStatus previousValue = this._tblEmployerClinicianStatus.Entity;
+				if (((previousValue != value) 
+							|| (this._tblEmployerClinicianStatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblEmployerClinicianStatus.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblEmployerClinicianStatus.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._StatusID = value.StatusID;
+					}
+					else
+					{
+						this._StatusID = default(int);
+					}
+					this.SendPropertyChanged("tblEmployerClinicianStatus");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblYearsExperience_tblClinician", Storage="_tblYearsExperience", ThisKey="YearsExpID", OtherKey="YearExpID", IsForeignKey=true)]
+		public tblYearsExperience tblYearsExperience
+		{
+			get
+			{
+				return this._tblYearsExperience.Entity;
+			}
+			set
+			{
+				tblYearsExperience previousValue = this._tblYearsExperience.Entity;
+				if (((previousValue != value) 
+							|| (this._tblYearsExperience.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblYearsExperience.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblYearsExperience.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._YearsExpID = value.YearExpID;
+					}
+					else
+					{
+						this._YearsExpID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblYearsExperience");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianType_tblClinician", Storage="_tblClinicianType", ThisKey="ClinicianTypeID", OtherKey="ClinicianTypeID", IsForeignKey=true)]
+		public tblClinicianType tblClinicianType
+		{
+			get
+			{
+				return this._tblClinicianType.Entity;
+			}
+			set
+			{
+				tblClinicianType previousValue = this._tblClinicianType.Entity;
+				if (((previousValue != value) 
+							|| (this._tblClinicianType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblClinicianType.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblClinicianType.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._ClinicianTypeID = value.ClinicianTypeID;
+					}
+					else
+					{
+						this._ClinicianTypeID = default(int);
+					}
+					this.SendPropertyChanged("tblClinicianType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAvailability_tblClinician", Storage="_tblAvailability", ThisKey="AvailabilityID", OtherKey="AvailabilityID", IsForeignKey=true)]
+		public tblAvailability tblAvailability
+		{
+			get
+			{
+				return this._tblAvailability.Entity;
+			}
+			set
+			{
+				tblAvailability previousValue = this._tblAvailability.Entity;
+				if (((previousValue != value) 
+							|| (this._tblAvailability.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblAvailability.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblAvailability.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._AvailabilityID = value.AvailabilityID;
+					}
+					else
+					{
+						this._AvailabilityID = default(int);
+					}
+					this.SendPropertyChanged("tblAvailability");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianDocument_tblClinician", Storage="_tblClinicianDocument", ThisKey="ClinicianDocumentID", OtherKey="ID", IsForeignKey=true)]
+		public tblClinicianDocument tblClinicianDocument
+		{
+			get
+			{
+				return this._tblClinicianDocument.Entity;
+			}
+			set
+			{
+				tblClinicianDocument previousValue = this._tblClinicianDocument.Entity;
+				if (((previousValue != value) 
+							|| (this._tblClinicianDocument.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblClinicianDocument.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblClinicianDocument.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._ClinicianDocumentID = value.ID;
+					}
+					else
+					{
+						this._ClinicianDocumentID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblClinicianDocument");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianLanguage_tblClinician", Storage="_tblClinicianLanguage", ThisKey="ClinicianID", OtherKey="ClinicianID", IsForeignKey=true)]
+		public tblClinicianLanguage tblClinicianLanguage
+		{
+			get
+			{
+				return this._tblClinicianLanguage.Entity;
+			}
+			set
+			{
+				tblClinicianLanguage previousValue = this._tblClinicianLanguage.Entity;
+				if (((previousValue != value) 
+							|| (this._tblClinicianLanguage.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblClinicianLanguage.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblClinicianLanguage.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._ClinicianID = value.ClinicianID;
+					}
+					else
+					{
+						this._ClinicianID = default(int);
+					}
+					this.SendPropertyChanged("tblClinicianLanguage");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblClinician", Storage="_tblAddress", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
+		public tblAddress tblAddress
+		{
+			get
+			{
+				return this._tblAddress.Entity;
+			}
+			set
+			{
+				tblAddress previousValue = this._tblAddress.Entity;
+				if (((previousValue != value) 
+							|| (this._tblAddress.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblAddress.Entity = null;
+						previousValue.tblClinicians.Remove(this);
+					}
+					this._tblAddress.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicians.Add(this);
+						this._AddressID = value.AddressID;
+					}
+					else
+					{
+						this._AddressID = default(int);
+					}
+					this.SendPropertyChanged("tblAddress");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianType")]
+	public partial class tblClinicianType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ClinicianTypeID;
+		
+		private string _Type;
+		
+		private int _Order;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnClinicianTypeIDChanging(int value);
+    partial void OnClinicianTypeIDChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblClinicianType()
+		{
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ClinicianTypeID
+		{
+			get
+			{
+				return this._ClinicianTypeID;
+			}
+			set
+			{
+				if ((this._ClinicianTypeID != value))
+				{
+					this.OnClinicianTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ClinicianTypeID = value;
+					this.SendPropertyChanged("ClinicianTypeID");
+					this.OnClinicianTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianType_tblClinician", Storage="_tblClinicians", ThisKey="ClinicianTypeID", OtherKey="ClinicianTypeID")]
+		public EntitySet<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this._tblClinicians;
+			}
+			set
+			{
+				this._tblClinicians.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblClinicianType = this;
+		}
+		
+		private void detach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblClinicianType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianLanguage")]
+	public partial class tblClinicianLanguage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _ClinicianID;
+		
+		private int _LanguageID;
+		
+		private System.DateTime _LastUpdatedDate;
+		
+		private string _LastUpdateBy;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+		private EntityRef<tblLanguage> _tblLanguage;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnClinicianIDChanging(int value);
+    partial void OnClinicianIDChanged();
+    partial void OnLanguageIDChanging(int value);
+    partial void OnLanguageIDChanged();
+    partial void OnLastUpdatedDateChanging(System.DateTime value);
+    partial void OnLastUpdatedDateChanged();
+    partial void OnLastUpdateByChanging(string value);
+    partial void OnLastUpdateByChanged();
+    #endregion
+		
+		public tblClinicianLanguage()
+		{
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblLanguage = default(EntityRef<tblLanguage>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL")]
+		public int ClinicianID
+		{
+			get
+			{
+				return this._ClinicianID;
+			}
+			set
+			{
+				if ((this._ClinicianID != value))
+				{
+					this.OnClinicianIDChanging(value);
+					this.SendPropertyChanging();
+					this._ClinicianID = value;
+					this.SendPropertyChanged("ClinicianID");
+					this.OnClinicianIDChanged();
 				}
 			}
 		}
@@ -621,6 +2506,10 @@ namespace PSL.DAL
 			{
 				if ((this._LanguageID != value))
 				{
+					if (this._tblLanguage.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnLanguageIDChanging(value);
 					this.SendPropertyChanging();
 					this._LanguageID = value;
@@ -630,62 +2519,90 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LiscenseID", DbType="Int NOT NULL")]
-		public int LiscenseID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdatedDate
 		{
 			get
 			{
-				return this._LiscenseID;
+				return this._LastUpdatedDate;
 			}
 			set
 			{
-				if ((this._LiscenseID != value))
+				if ((this._LastUpdatedDate != value))
 				{
-					this.OnLiscenseIDChanging(value);
+					this.OnLastUpdatedDateChanging(value);
 					this.SendPropertyChanging();
-					this._LiscenseID = value;
-					this.SendPropertyChanged("LiscenseID");
-					this.OnLiscenseIDChanged();
+					this._LastUpdatedDate = value;
+					this.SendPropertyChanged("LastUpdatedDate");
+					this.OnLastUpdatedDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblAddress", Storage="_tblAddresses", ThisKey="AddressID", OtherKey="AddressID")]
-		public EntitySet<tblAddress> tblAddresses
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdateBy", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string LastUpdateBy
 		{
 			get
 			{
-				return this._tblAddresses;
+				return this._LastUpdateBy;
 			}
 			set
 			{
-				this._tblAddresses.Assign(value);
+				if ((this._LastUpdateBy != value))
+				{
+					this.OnLastUpdateByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdateBy = value;
+					this.SendPropertyChanged("LastUpdateBy");
+					this.OnLastUpdateByChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblClinicianType", Storage="_tblClinicianTypes", ThisKey="ClinicianTypeID", OtherKey="ClinicianTypeID")]
-		public EntitySet<tblClinicianType> tblClinicianTypes
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianLanguage_tblClinician", Storage="_tblClinicians", ThisKey="ClinicianID", OtherKey="ClinicianID")]
+		public EntitySet<tblClinician> tblClinicians
 		{
 			get
 			{
-				return this._tblClinicianTypes;
+				return this._tblClinicians;
 			}
 			set
 			{
-				this._tblClinicianTypes.Assign(value);
+				this._tblClinicians.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblEmployerClinicianStatus", Storage="_tblEmployerClinicianStatus", ThisKey="StatusID", OtherKey="StatusID")]
-		public EntitySet<tblEmployerClinicianStatus> tblEmployerClinicianStatus
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLanguage_tblClinicianLanguage", Storage="_tblLanguage", ThisKey="LanguageID", OtherKey="LanguageID", IsForeignKey=true)]
+		public tblLanguage tblLanguage
 		{
 			get
 			{
-				return this._tblEmployerClinicianStatus;
+				return this._tblLanguage.Entity;
 			}
 			set
 			{
-				this._tblEmployerClinicianStatus.Assign(value);
+				tblLanguage previousValue = this._tblLanguage.Entity;
+				if (((previousValue != value) 
+							|| (this._tblLanguage.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblLanguage.Entity = null;
+						previousValue.tblClinicianLanguages.Remove(this);
+					}
+					this._tblLanguage.Entity = value;
+					if ((value != null))
+					{
+						value.tblClinicianLanguages.Add(this);
+						this._LanguageID = value.LanguageID;
+					}
+					else
+					{
+						this._LanguageID = default(int);
+					}
+					this.SendPropertyChanged("tblLanguage");
+				}
 			}
 		}
 		
@@ -709,364 +2626,471 @@ namespace PSL.DAL
 			}
 		}
 		
-		private void attach_tblAddresses(tblAddress entity)
+		private void attach_tblClinicians(tblClinician entity)
 		{
 			this.SendPropertyChanging();
-			entity.tblClinician = this;
+			entity.tblClinicianLanguage = this;
 		}
 		
-		private void detach_tblAddresses(tblAddress entity)
+		private void detach_tblClinicians(tblClinician entity)
 		{
 			this.SendPropertyChanging();
-			entity.tblClinician = null;
-		}
-		
-		private void attach_tblClinicianTypes(tblClinicianType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblClinician = this;
-		}
-		
-		private void detach_tblClinicianTypes(tblClinicianType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblClinician = null;
-		}
-		
-		private void attach_tblEmployerClinicianStatus(tblEmployerClinicianStatus entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblClinician = this;
-		}
-		
-		private void detach_tblEmployerClinicianStatus(tblEmployerClinicianStatus entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblClinician = null;
+			entity.tblClinicianLanguage = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAddress")]
-	public partial class tblAddress : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAvailability")]
+	public partial class tblAvailability : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _AddressID;
+		private int _AvailabilityID;
 		
-		private string _AddressLine1;
+		private string _Value;
 		
-		private string _AddressLine2;
+		private int _Order;
 		
-		private string _City;
+		private EntitySet<tblClinician> _tblClinicians;
 		
-		private string _State;
-		
-		private string _Zip;
-		
-		private System.Nullable<decimal> _Longitude;
-		
-		private System.Nullable<decimal> _Latitude;
-		
-		private EntityRef<tblClinician> _tblClinician;
-		
-		private EntityRef<tblEmployer> _tblEmployer;
-		
-		private EntityRef<tblJob> _tblJob;
+		private EntitySet<tblJob> _tblJobs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnAddressIDChanging(int value);
-    partial void OnAddressIDChanged();
-    partial void OnAddressLine1Changing(string value);
-    partial void OnAddressLine1Changed();
-    partial void OnAddressLine2Changing(string value);
-    partial void OnAddressLine2Changed();
-    partial void OnCityChanging(string value);
-    partial void OnCityChanged();
-    partial void OnStateChanging(string value);
-    partial void OnStateChanged();
-    partial void OnZipChanging(string value);
-    partial void OnZipChanged();
-    partial void OnLongitudeChanging(System.Nullable<decimal> value);
-    partial void OnLongitudeChanged();
-    partial void OnLatitudeChanging(System.Nullable<decimal> value);
-    partial void OnLatitudeChanged();
+    partial void OnAvailabilityIDChanging(int value);
+    partial void OnAvailabilityIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
     #endregion
 		
-		public tblAddress()
+		public tblAvailability()
 		{
-			this._tblClinician = default(EntityRef<tblClinician>);
-			this._tblEmployer = default(EntityRef<tblEmployer>);
-			this._tblJob = default(EntityRef<tblJob>);
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int AddressID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailabilityID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AvailabilityID
 		{
 			get
 			{
-				return this._AddressID;
+				return this._AvailabilityID;
 			}
 			set
 			{
-				if ((this._AddressID != value))
+				if ((this._AvailabilityID != value))
 				{
-					if (((this._tblClinician.HasLoadedOrAssignedValue || this._tblEmployer.HasLoadedOrAssignedValue) 
-								|| this._tblJob.HasLoadedOrAssignedValue))
+					this.OnAvailabilityIDChanging(value);
+					this.SendPropertyChanging();
+					this._AvailabilityID = value;
+					this.SendPropertyChanged("AvailabilityID");
+					this.OnAvailabilityIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAvailability_tblClinician", Storage="_tblClinicians", ThisKey="AvailabilityID", OtherKey="AvailabilityID")]
+		public EntitySet<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this._tblClinicians;
+			}
+			set
+			{
+				this._tblClinicians.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAvailability_tblJob", Storage="_tblJobs", ThisKey="AvailabilityID", OtherKey="AvailabilityID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAvailability = this;
+		}
+		
+		private void detach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAvailability = null;
+		}
+		
+		private void attach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAvailability = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblAvailability = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianDocuments")]
+	public partial class tblClinicianDocument : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _ClinicianID;
+		
+		private int _DocumentTypeID;
+		
+		private string _Description;
+		
+		private string _Location;
+		
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.DateTime _LastModifiedDate;
+		
+		private string _LastModifiedBy;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+		private EntityRef<tblDocumentType> _tblDocumentType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnClinicianIDChanging(int value);
+    partial void OnClinicianIDChanged();
+    partial void OnDocumentTypeIDChanging(int value);
+    partial void OnDocumentTypeIDChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnLocationChanging(string value);
+    partial void OnLocationChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnLastModifiedDateChanging(System.DateTime value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(string value);
+    partial void OnLastModifiedByChanged();
+    #endregion
+		
+		public tblClinicianDocument()
+		{
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblDocumentType = default(EntityRef<tblDocumentType>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL")]
+		public int ClinicianID
+		{
+			get
+			{
+				return this._ClinicianID;
+			}
+			set
+			{
+				if ((this._ClinicianID != value))
+				{
+					this.OnClinicianIDChanging(value);
+					this.SendPropertyChanging();
+					this._ClinicianID = value;
+					this.SendPropertyChanged("ClinicianID");
+					this.OnClinicianIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentTypeID", DbType="Int NOT NULL")]
+		public int DocumentTypeID
+		{
+			get
+			{
+				return this._DocumentTypeID;
+			}
+			set
+			{
+				if ((this._DocumentTypeID != value))
+				{
+					if (this._tblDocumentType.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnAddressIDChanging(value);
+					this.OnDocumentTypeIDChanging(value);
 					this.SendPropertyChanging();
-					this._AddressID = value;
-					this.SendPropertyChanged("AddressID");
-					this.OnAddressIDChanged();
+					this._DocumentTypeID = value;
+					this.SendPropertyChanged("DocumentTypeID");
+					this.OnDocumentTypeIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressLine1", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string AddressLine1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(250)")]
+		public string Description
 		{
 			get
 			{
-				return this._AddressLine1;
+				return this._Description;
 			}
 			set
 			{
-				if ((this._AddressLine1 != value))
+				if ((this._Description != value))
 				{
-					this.OnAddressLine1Changing(value);
+					this.OnDescriptionChanging(value);
 					this.SendPropertyChanging();
-					this._AddressLine1 = value;
-					this.SendPropertyChanged("AddressLine1");
-					this.OnAddressLine1Changed();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressLine2", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string AddressLine2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="VarChar(250)")]
+		public string Location
 		{
 			get
 			{
-				return this._AddressLine2;
+				return this._Location;
 			}
 			set
 			{
-				if ((this._AddressLine2 != value))
+				if ((this._Location != value))
 				{
-					this.OnAddressLine2Changing(value);
+					this.OnLocationChanging(value);
 					this.SendPropertyChanging();
-					this._AddressLine2 = value;
-					this.SendPropertyChanged("AddressLine2");
-					this.OnAddressLine2Changed();
+					this._Location = value;
+					this.SendPropertyChanged("Location");
+					this.OnLocationChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string City
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
 		{
 			get
 			{
-				return this._City;
+				return this._StartDate;
 			}
 			set
 			{
-				if ((this._City != value))
+				if ((this._StartDate != value))
 				{
-					this.OnCityChanging(value);
+					this.OnStartDateChanging(value);
 					this.SendPropertyChanging();
-					this._City = value;
-					this.SendPropertyChanged("City");
-					this.OnCityChanged();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string State
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
 		{
 			get
 			{
-				return this._State;
+				return this._EndDate;
 			}
 			set
 			{
-				if ((this._State != value))
+				if ((this._EndDate != value))
 				{
-					this.OnStateChanging(value);
+					this.OnEndDateChanging(value);
 					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string Zip
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastModifiedDate
 		{
 			get
 			{
-				return this._Zip;
+				return this._LastModifiedDate;
 			}
 			set
 			{
-				if ((this._Zip != value))
+				if ((this._LastModifiedDate != value))
 				{
-					this.OnZipChanging(value);
+					this.OnLastModifiedDateChanging(value);
 					this.SendPropertyChanging();
-					this._Zip = value;
-					this.SendPropertyChanged("Zip");
-					this.OnZipChanged();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(9,6)")]
-		public System.Nullable<decimal> Longitude
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string LastModifiedBy
 		{
 			get
 			{
-				return this._Longitude;
+				return this._LastModifiedBy;
 			}
 			set
 			{
-				if ((this._Longitude != value))
+				if ((this._LastModifiedBy != value))
 				{
-					this.OnLongitudeChanging(value);
+					this.OnLastModifiedByChanging(value);
 					this.SendPropertyChanging();
-					this._Longitude = value;
-					this.SendPropertyChanged("Longitude");
-					this.OnLongitudeChanged();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(9,6)")]
-		public System.Nullable<decimal> Latitude
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinicianDocument_tblClinician", Storage="_tblClinicians", ThisKey="ID", OtherKey="ClinicianDocumentID")]
+		public EntitySet<tblClinician> tblClinicians
 		{
 			get
 			{
-				return this._Latitude;
+				return this._tblClinicians;
 			}
 			set
 			{
-				if ((this._Latitude != value))
-				{
-					this.OnLatitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Latitude = value;
-					this.SendPropertyChanged("Latitude");
-					this.OnLatitudeChanged();
-				}
+				this._tblClinicians.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblAddress", Storage="_tblClinician", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
-		public tblClinician tblClinician
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDocumentType_tblClinicianDocument", Storage="_tblDocumentType", ThisKey="DocumentTypeID", OtherKey="DocumentTypeID", IsForeignKey=true)]
+		public tblDocumentType tblDocumentType
 		{
 			get
 			{
-				return this._tblClinician.Entity;
+				return this._tblDocumentType.Entity;
 			}
 			set
 			{
-				tblClinician previousValue = this._tblClinician.Entity;
+				tblDocumentType previousValue = this._tblDocumentType.Entity;
 				if (((previousValue != value) 
-							|| (this._tblClinician.HasLoadedOrAssignedValue == false)))
+							|| (this._tblDocumentType.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblClinician.Entity = null;
-						previousValue.tblAddresses.Remove(this);
+						this._tblDocumentType.Entity = null;
+						previousValue.tblClinicianDocuments.Remove(this);
 					}
-					this._tblClinician.Entity = value;
+					this._tblDocumentType.Entity = value;
 					if ((value != null))
 					{
-						value.tblAddresses.Add(this);
-						this._AddressID = value.AddressID;
+						value.tblClinicianDocuments.Add(this);
+						this._DocumentTypeID = value.DocumentTypeID;
 					}
 					else
 					{
-						this._AddressID = default(int);
+						this._DocumentTypeID = default(int);
 					}
-					this.SendPropertyChanged("tblClinician");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblAddress", Storage="_tblEmployer", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
-		public tblEmployer tblEmployer
-		{
-			get
-			{
-				return this._tblEmployer.Entity;
-			}
-			set
-			{
-				tblEmployer previousValue = this._tblEmployer.Entity;
-				if (((previousValue != value) 
-							|| (this._tblEmployer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblEmployer.Entity = null;
-						previousValue.tblAddresses.Remove(this);
-					}
-					this._tblEmployer.Entity = value;
-					if ((value != null))
-					{
-						value.tblAddresses.Add(this);
-						this._AddressID = value.AddressID;
-					}
-					else
-					{
-						this._AddressID = default(int);
-					}
-					this.SendPropertyChanged("tblEmployer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblAddress", Storage="_tblJob", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
-				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblJob.Entity = null;
-						previousValue.tblAddresses.Remove(this);
-					}
-					this._tblJob.Entity = value;
-					if ((value != null))
-					{
-						value.tblAddresses.Add(this);
-						this._AddressID = value.AddressID;
-					}
-					else
-					{
-						this._AddressID = default(int);
-					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblDocumentType");
 				}
 			}
 		}
@@ -1089,6 +3113,232 @@ namespace PSL.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblClinicianDocument = this;
+		}
+		
+		private void detach_tblClinicians(tblClinician entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblClinicianDocument = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblDocumentType")]
+	public partial class tblDocumentType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DocumentTypeID;
+		
+		private string _Value;
+		
+		private int _Order;
+		
+		private System.DateTime _LastUpdatedDate;
+		
+		private string _LastUpdatedBy;
+		
+		private EntitySet<tblClinicianDocument> _tblClinicianDocuments;
+		
+		private EntitySet<tblEmployerDocument> _tblEmployerDocuments;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDocumentTypeIDChanging(int value);
+    partial void OnDocumentTypeIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(int value);
+    partial void OnOrderChanged();
+    partial void OnLastUpdatedDateChanging(System.DateTime value);
+    partial void OnLastUpdatedDateChanged();
+    partial void OnLastUpdatedByChanging(string value);
+    partial void OnLastUpdatedByChanged();
+    #endregion
+		
+		public tblDocumentType()
+		{
+			this._tblClinicianDocuments = new EntitySet<tblClinicianDocument>(new Action<tblClinicianDocument>(this.attach_tblClinicianDocuments), new Action<tblClinicianDocument>(this.detach_tblClinicianDocuments));
+			this._tblEmployerDocuments = new EntitySet<tblEmployerDocument>(new Action<tblEmployerDocument>(this.attach_tblEmployerDocuments), new Action<tblEmployerDocument>(this.detach_tblEmployerDocuments));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DocumentTypeID
+		{
+			get
+			{
+				return this._DocumentTypeID;
+			}
+			set
+			{
+				if ((this._DocumentTypeID != value))
+				{
+					this.OnDocumentTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._DocumentTypeID = value;
+					this.SendPropertyChanged("DocumentTypeID");
+					this.OnDocumentTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
+		public int Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdatedDate
+		{
+			get
+			{
+				return this._LastUpdatedDate;
+			}
+			set
+			{
+				if ((this._LastUpdatedDate != value))
+				{
+					this.OnLastUpdatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdatedDate = value;
+					this.SendPropertyChanged("LastUpdatedDate");
+					this.OnLastUpdatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdatedBy", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string LastUpdatedBy
+		{
+			get
+			{
+				return this._LastUpdatedBy;
+			}
+			set
+			{
+				if ((this._LastUpdatedBy != value))
+				{
+					this.OnLastUpdatedByChanging(value);
+					this.SendPropertyChanging();
+					this._LastUpdatedBy = value;
+					this.SendPropertyChanged("LastUpdatedBy");
+					this.OnLastUpdatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDocumentType_tblClinicianDocument", Storage="_tblClinicianDocuments", ThisKey="DocumentTypeID", OtherKey="DocumentTypeID")]
+		public EntitySet<tblClinicianDocument> tblClinicianDocuments
+		{
+			get
+			{
+				return this._tblClinicianDocuments;
+			}
+			set
+			{
+				this._tblClinicianDocuments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDocumentType_tblEmployerDocument", Storage="_tblEmployerDocuments", ThisKey="DocumentTypeID", OtherKey="DocumentTypeID")]
+		public EntitySet<tblEmployerDocument> tblEmployerDocuments
+		{
+			get
+			{
+				return this._tblEmployerDocuments;
+			}
+			set
+			{
+				this._tblEmployerDocuments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblClinicianDocuments(tblClinicianDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDocumentType = this;
+		}
+		
+		private void detach_tblClinicianDocuments(tblClinicianDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDocumentType = null;
+		}
+		
+		private void attach_tblEmployerDocuments(tblEmployerDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDocumentType = this;
+		}
+		
+		private void detach_tblEmployerDocuments(tblEmployerDocument entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblDocumentType = null;
 		}
 	}
 	
@@ -1116,9 +3366,15 @@ namespace PSL.DAL
 		
 		private int _EmployerTypeID;
 		
-		private EntitySet<tblAddress> _tblAddresses;
+		private System.Nullable<System.DateTime> _LastModifiedDate;
 		
-		private EntitySet<tblEmployerClinicianStatus> _tblEmployerClinicianStatus;
+		private System.Nullable<System.DateTime> _LastModifiedBy;
+		
+		private EntitySet<tblEmployerDocument> _tblEmployerDocuments;
+		
+		private EntityRef<tblEmployerClinicianStatus> _tblEmployerClinicianStatus;
+		
+		private EntityRef<tblAddress> _tblAddress;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1142,12 +3398,17 @@ namespace PSL.DAL
     partial void OnDocumentIDChanged();
     partial void OnEmployerTypeIDChanging(int value);
     partial void OnEmployerTypeIDChanged();
+    partial void OnLastModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastModifiedByChanged();
     #endregion
 		
 		public tblEmployer()
 		{
-			this._tblAddresses = new EntitySet<tblAddress>(new Action<tblAddress>(this.attach_tblAddresses), new Action<tblAddress>(this.detach_tblAddresses));
-			this._tblEmployerClinicianStatus = new EntitySet<tblEmployerClinicianStatus>(new Action<tblEmployerClinicianStatus>(this.attach_tblEmployerClinicianStatus), new Action<tblEmployerClinicianStatus>(this.detach_tblEmployerClinicianStatus));
+			this._tblEmployerDocuments = new EntitySet<tblEmployerDocument>(new Action<tblEmployerDocument>(this.attach_tblEmployerDocuments), new Action<tblEmployerDocument>(this.detach_tblEmployerDocuments));
+			this._tblEmployerClinicianStatus = default(EntityRef<tblEmployerClinicianStatus>);
+			this._tblAddress = default(EntityRef<tblAddress>);
 			OnCreated();
 		}
 		
@@ -1262,6 +3523,10 @@ namespace PSL.DAL
 			{
 				if ((this._StatusID != value))
 				{
+					if (this._tblEmployerClinicianStatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStatusIDChanging(value);
 					this.SendPropertyChanging();
 					this._StatusID = value;
@@ -1282,6 +3547,10 @@ namespace PSL.DAL
 			{
 				if ((this._AddressID != value))
 				{
+					if (this._tblAddress.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAddressIDChanging(value);
 					this.SendPropertyChanging();
 					this._AddressID = value;
@@ -1331,29 +3600,124 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblAddress", Storage="_tblAddresses", ThisKey="AddressID", OtherKey="AddressID")]
-		public EntitySet<tblAddress> tblAddresses
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastModifiedDate
 		{
 			get
 			{
-				return this._tblAddresses;
+				return this._LastModifiedDate;
 			}
 			set
 			{
-				this._tblAddresses.Assign(value);
+				if ((this._LastModifiedDate != value))
+				{
+					this.OnLastModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblEmployerClinicianStatus", Storage="_tblEmployerClinicianStatus", ThisKey="StatusID", OtherKey="StatusID")]
-		public EntitySet<tblEmployerClinicianStatus> tblEmployerClinicianStatus
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastModifiedBy
 		{
 			get
 			{
-				return this._tblEmployerClinicianStatus;
+				return this._LastModifiedBy;
 			}
 			set
 			{
-				this._tblEmployerClinicianStatus.Assign(value);
+				if ((this._LastModifiedBy != value))
+				{
+					this.OnLastModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblEmployerDocument", Storage="_tblEmployerDocuments", ThisKey="EmployerID", OtherKey="EmployerID")]
+		public EntitySet<tblEmployerDocument> tblEmployerDocuments
+		{
+			get
+			{
+				return this._tblEmployerDocuments;
+			}
+			set
+			{
+				this._tblEmployerDocuments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployerClinicianStatus_tblEmployer", Storage="_tblEmployerClinicianStatus", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
+		public tblEmployerClinicianStatus tblEmployerClinicianStatus
+		{
+			get
+			{
+				return this._tblEmployerClinicianStatus.Entity;
+			}
+			set
+			{
+				tblEmployerClinicianStatus previousValue = this._tblEmployerClinicianStatus.Entity;
+				if (((previousValue != value) 
+							|| (this._tblEmployerClinicianStatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblEmployerClinicianStatus.Entity = null;
+						previousValue.tblEmployers.Remove(this);
+					}
+					this._tblEmployerClinicianStatus.Entity = value;
+					if ((value != null))
+					{
+						value.tblEmployers.Add(this);
+						this._StatusID = value.StatusID;
+					}
+					else
+					{
+						this._StatusID = default(int);
+					}
+					this.SendPropertyChanged("tblEmployerClinicianStatus");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblEmployer", Storage="_tblAddress", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
+		public tblAddress tblAddress
+		{
+			get
+			{
+				return this._tblAddress.Entity;
+			}
+			set
+			{
+				tblAddress previousValue = this._tblAddress.Entity;
+				if (((previousValue != value) 
+							|| (this._tblAddress.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblAddress.Entity = null;
+						previousValue.tblEmployers.Remove(this);
+					}
+					this._tblAddress.Entity = value;
+					if ((value != null))
+					{
+						value.tblEmployers.Add(this);
+						this._AddressID = value.AddressID;
+					}
+					else
+					{
+						this._AddressID = default(int);
+					}
+					this.SendPropertyChanged("tblAddress");
+				}
 			}
 		}
 		
@@ -1377,28 +3741,632 @@ namespace PSL.DAL
 			}
 		}
 		
-		private void attach_tblAddresses(tblAddress entity)
+		private void attach_tblEmployerDocuments(tblEmployerDocument entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblEmployer = this;
 		}
 		
-		private void detach_tblAddresses(tblAddress entity)
+		private void detach_tblEmployerDocuments(tblEmployerDocument entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblEmployer = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployerDocuments")]
+	public partial class tblEmployerDocument : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_tblEmployerClinicianStatus(tblEmployerClinicianStatus entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EmployerDocumentID;
+		
+		private int _EmployerID;
+		
+		private int _DocumentTypeID;
+		
+		private string _Description;
+		
+		private string _Location;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.Nullable<System.DateTime> _LastModifiedDate;
+		
+		private string _LastModifiedBy;
+		
+		private EntityRef<tblDocumentType> _tblDocumentType;
+		
+		private EntityRef<tblEmployer> _tblEmployer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmployerDocumentIDChanging(int value);
+    partial void OnEmployerDocumentIDChanged();
+    partial void OnEmployerIDChanging(int value);
+    partial void OnEmployerIDChanged();
+    partial void OnDocumentTypeIDChanging(int value);
+    partial void OnDocumentTypeIDChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnLocationChanging(string value);
+    partial void OnLocationChanged();
+    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnLastModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(string value);
+    partial void OnLastModifiedByChanged();
+    #endregion
+		
+		public tblEmployerDocument()
 		{
-			this.SendPropertyChanging();
-			entity.tblEmployer = this;
+			this._tblDocumentType = default(EntityRef<tblDocumentType>);
+			this._tblEmployer = default(EntityRef<tblEmployer>);
+			OnCreated();
 		}
 		
-		private void detach_tblEmployerClinicianStatus(tblEmployerClinicianStatus entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployerDocumentID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EmployerDocumentID
+		{
+			get
+			{
+				return this._EmployerDocumentID;
+			}
+			set
+			{
+				if ((this._EmployerDocumentID != value))
+				{
+					this.OnEmployerDocumentIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployerDocumentID = value;
+					this.SendPropertyChanged("EmployerDocumentID");
+					this.OnEmployerDocumentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployerID", DbType="Int NOT NULL")]
+		public int EmployerID
+		{
+			get
+			{
+				return this._EmployerID;
+			}
+			set
+			{
+				if ((this._EmployerID != value))
+				{
+					if (this._tblEmployer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployerIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployerID = value;
+					this.SendPropertyChanged("EmployerID");
+					this.OnEmployerIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocumentTypeID", DbType="Int NOT NULL")]
+		public int DocumentTypeID
+		{
+			get
+			{
+				return this._DocumentTypeID;
+			}
+			set
+			{
+				if ((this._DocumentTypeID != value))
+				{
+					if (this._tblDocumentType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDocumentTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._DocumentTypeID = value;
+					this.SendPropertyChanged("DocumentTypeID");
+					this.OnDocumentTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(250)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="VarChar(250)")]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this.OnLocationChanging(value);
+					this.SendPropertyChanging();
+					this._Location = value;
+					this.SendPropertyChanged("Location");
+					this.OnLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastModifiedDate
+		{
+			get
+			{
+				return this._LastModifiedDate;
+			}
+			set
+			{
+				if ((this._LastModifiedDate != value))
+				{
+					this.OnLastModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="VarChar(25)")]
+		public string LastModifiedBy
+		{
+			get
+			{
+				return this._LastModifiedBy;
+			}
+			set
+			{
+				if ((this._LastModifiedBy != value))
+				{
+					this.OnLastModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblDocumentType_tblEmployerDocument", Storage="_tblDocumentType", ThisKey="DocumentTypeID", OtherKey="DocumentTypeID", IsForeignKey=true)]
+		public tblDocumentType tblDocumentType
+		{
+			get
+			{
+				return this._tblDocumentType.Entity;
+			}
+			set
+			{
+				tblDocumentType previousValue = this._tblDocumentType.Entity;
+				if (((previousValue != value) 
+							|| (this._tblDocumentType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblDocumentType.Entity = null;
+						previousValue.tblEmployerDocuments.Remove(this);
+					}
+					this._tblDocumentType.Entity = value;
+					if ((value != null))
+					{
+						value.tblEmployerDocuments.Add(this);
+						this._DocumentTypeID = value.DocumentTypeID;
+					}
+					else
+					{
+						this._DocumentTypeID = default(int);
+					}
+					this.SendPropertyChanged("tblDocumentType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblEmployerDocument", Storage="_tblEmployer", ThisKey="EmployerID", OtherKey="EmployerID", IsForeignKey=true)]
+		public tblEmployer tblEmployer
+		{
+			get
+			{
+				return this._tblEmployer.Entity;
+			}
+			set
+			{
+				tblEmployer previousValue = this._tblEmployer.Entity;
+				if (((previousValue != value) 
+							|| (this._tblEmployer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblEmployer.Entity = null;
+						previousValue.tblEmployerDocuments.Remove(this);
+					}
+					this._tblEmployer.Entity = value;
+					if ((value != null))
+					{
+						value.tblEmployerDocuments.Add(this);
+						this._EmployerID = value.EmployerID;
+					}
+					else
+					{
+						this._EmployerID = default(int);
+					}
+					this.SendPropertyChanged("tblEmployer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmrErxExperienceType")]
+	public partial class tblEmrErxExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EmrErxExperienceTypeID;
+		
+		private string _Value;
+		
+		private System.Nullable<int> _Order;
+		
+		private EntitySet<tblJob> _tblJobs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmrErxExperienceTypeIDChanging(int value);
+    partial void OnEmrErxExperienceTypeIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnOrderChanging(System.Nullable<int> value);
+    partial void OnOrderChanged();
+    #endregion
+		
+		public tblEmrErxExperienceType()
+		{
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmrErxExperienceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EmrErxExperienceTypeID
+		{
+			get
+			{
+				return this._EmrErxExperienceTypeID;
+			}
+			set
+			{
+				if ((this._EmrErxExperienceTypeID != value))
+				{
+					this.OnEmrErxExperienceTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmrErxExperienceTypeID = value;
+					this.SendPropertyChanged("EmrErxExperienceTypeID");
+					this.OnEmrErxExperienceTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
+		public System.Nullable<int> Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				if ((this._Order != value))
+				{
+					this.OnOrderChanging(value);
+					this.SendPropertyChanging();
+					this._Order = value;
+					this.SendPropertyChanged("Order");
+					this.OnOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmrErxExperienceType_tblJob", Storage="_tblJobs", ThisKey="EmrErxExperienceTypeID", OtherKey="EmrErxExperienceTypeID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblJobs(tblJob entity)
 		{
 			this.SendPropertyChanging();
-			entity.tblEmployer = null;
+			entity.tblEmrErxExperienceType = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblEmrErxExperienceType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblGeneralStatus")]
+	public partial class tblGeneralStatus : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _StatusID;
+		
+		private string _Status;
+		
+		private EntitySet<tblJobClinicianMatch> _tblJobClinicianMatches;
+		
+		private EntitySet<tblJob> _tblJobs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStatusIDChanging(int value);
+    partial void OnStatusIDChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public tblGeneralStatus()
+		{
+			this._tblJobClinicianMatches = new EntitySet<tblJobClinicianMatch>(new Action<tblJobClinicianMatch>(this.attach_tblJobClinicianMatches), new Action<tblJobClinicianMatch>(this.detach_tblJobClinicianMatches));
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int StatusID
+		{
+			get
+			{
+				return this._StatusID;
+			}
+			set
+			{
+				if ((this._StatusID != value))
+				{
+					this.OnStatusIDChanging(value);
+					this.SendPropertyChanging();
+					this._StatusID = value;
+					this.SendPropertyChanged("StatusID");
+					this.OnStatusIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGeneralStatus_tblJobClinicianMatch", Storage="_tblJobClinicianMatches", ThisKey="StatusID", OtherKey="StatusID")]
+		public EntitySet<tblJobClinicianMatch> tblJobClinicianMatches
+		{
+			get
+			{
+				return this._tblJobClinicianMatches;
+			}
+			set
+			{
+				this._tblJobClinicianMatches.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGeneralStatus_tblJob", Storage="_tblJobs", ThisKey="StatusID", OtherKey="StatusID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblJobClinicianMatches(tblJobClinicianMatch entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblGeneralStatus = this;
+		}
+		
+		private void detach_tblJobClinicianMatches(tblJobClinicianMatch entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblGeneralStatus = null;
+		}
+		
+		private void attach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblGeneralStatus = this;
+		}
+		
+		private void detach_tblJobs(tblJob entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblGeneralStatus = null;
 		}
 	}
 	
@@ -1656,132 +4624,252 @@ namespace PSL.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAvailability")]
-	public partial class tblAvailability : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobClinicianMatch")]
+	public partial class tblJobClinicianMatch : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _AvailabilityID;
+		private int _JobClinicianMatchID;
 		
-		private string _Value;
+		private int _JobID;
 		
-		private int _Order;
+		private int _ClinicianID;
 		
-		private EntityRef<tblJob> _tblJob;
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private int _StatusID;
+		
+		private System.DateTime _LastUpdatedDate;
+		
+		private string _LastUpdatedBy;
+		
+		private EntityRef<tblGeneralStatus> _tblGeneralStatus;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnAvailabilityIDChanging(int value);
-    partial void OnAvailabilityIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
+    partial void OnJobClinicianMatchIDChanging(int value);
+    partial void OnJobClinicianMatchIDChanged();
+    partial void OnJobIDChanging(int value);
+    partial void OnJobIDChanged();
+    partial void OnClinicianIDChanging(int value);
+    partial void OnClinicianIDChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnStatusIDChanging(int value);
+    partial void OnStatusIDChanged();
+    partial void OnLastUpdatedDateChanging(System.DateTime value);
+    partial void OnLastUpdatedDateChanged();
+    partial void OnLastUpdatedByChanging(string value);
+    partial void OnLastUpdatedByChanged();
     #endregion
 		
-		public tblAvailability()
+		public tblJobClinicianMatch()
 		{
-			this._tblJob = default(EntityRef<tblJob>);
+			this._tblGeneralStatus = default(EntityRef<tblGeneralStatus>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailabilityID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int AvailabilityID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobClinicianMatchID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int JobClinicianMatchID
 		{
 			get
 			{
-				return this._AvailabilityID;
+				return this._JobClinicianMatchID;
 			}
 			set
 			{
-				if ((this._AvailabilityID != value))
+				if ((this._JobClinicianMatchID != value))
 				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
+					this.OnJobClinicianMatchIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobClinicianMatchID = value;
+					this.SendPropertyChanged("JobClinicianMatchID");
+					this.OnJobClinicianMatchIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int JobID
+		{
+			get
+			{
+				return this._JobID;
+			}
+			set
+			{
+				if ((this._JobID != value))
+				{
+					this.OnJobIDChanging(value);
+					this.SendPropertyChanging();
+					this._JobID = value;
+					this.SendPropertyChanged("JobID");
+					this.OnJobIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ClinicianID
+		{
+			get
+			{
+				return this._ClinicianID;
+			}
+			set
+			{
+				if ((this._ClinicianID != value))
+				{
+					this.OnClinicianIDChanging(value);
+					this.SendPropertyChanging();
+					this._ClinicianID = value;
+					this.SendPropertyChanged("ClinicianID");
+					this.OnClinicianIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", DbType="Int NOT NULL")]
+		public int StatusID
+		{
+			get
+			{
+				return this._StatusID;
+			}
+			set
+			{
+				if ((this._StatusID != value))
+				{
+					if (this._tblGeneralStatus.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnAvailabilityIDChanging(value);
+					this.OnStatusIDChanging(value);
 					this.SendPropertyChanging();
-					this._AvailabilityID = value;
-					this.SendPropertyChanged("AvailabilityID");
-					this.OnAvailabilityIDChanged();
+					this._StatusID = value;
+					this.SendPropertyChanged("StatusID");
+					this.OnStatusIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Value
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastUpdatedDate
 		{
 			get
 			{
-				return this._Value;
+				return this._LastUpdatedDate;
 			}
 			set
 			{
-				if ((this._Value != value))
+				if ((this._LastUpdatedDate != value))
 				{
-					this.OnValueChanging(value);
+					this.OnLastUpdatedDateChanging(value);
 					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
+					this._LastUpdatedDate = value;
+					this.SendPropertyChanged("LastUpdatedDate");
+					this.OnLastUpdatedDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastUpdatedBy", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string LastUpdatedBy
 		{
 			get
 			{
-				return this._Order;
+				return this._LastUpdatedBy;
 			}
 			set
 			{
-				if ((this._Order != value))
+				if ((this._LastUpdatedBy != value))
 				{
-					this.OnOrderChanging(value);
+					this.OnLastUpdatedByChanging(value);
 					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
+					this._LastUpdatedBy = value;
+					this.SendPropertyChanged("LastUpdatedBy");
+					this.OnLastUpdatedByChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblAvailability", Storage="_tblJob", ThisKey="AvailabilityID", OtherKey="AvailabilityID", IsForeignKey=true)]
-		public tblJob tblJob
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGeneralStatus_tblJobClinicianMatch", Storage="_tblGeneralStatus", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
+		public tblGeneralStatus tblGeneralStatus
 		{
 			get
 			{
-				return this._tblJob.Entity;
+				return this._tblGeneralStatus.Entity;
 			}
 			set
 			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblGeneralStatus previousValue = this._tblGeneralStatus.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblGeneralStatus.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblAvailabilities.Remove(this);
+						this._tblGeneralStatus.Entity = null;
+						previousValue.tblJobClinicianMatches.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblGeneralStatus.Entity = value;
 					if ((value != null))
 					{
-						value.tblAvailabilities.Add(this);
-						this._AvailabilityID = value.AvailabilityID;
+						value.tblJobClinicianMatches.Add(this);
+						this._StatusID = value.StatusID;
 					}
 					else
 					{
-						this._AvailabilityID = default(int);
+						this._StatusID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblGeneralStatus");
 				}
 			}
 		}
@@ -1813,7 +4901,7 @@ namespace PSL.DAL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ID;
+		private int _JobID;
 		
 		private string _Title;
 		
@@ -1835,9 +4923,7 @@ namespace PSL.DAL
 		
 		private int _ServiceTypeID;
 		
-		private string _PatientPopulationType;
-		
-		private string _SalaryRange;
+		private System.Nullable<int> _SalaryRangeID;
 		
 		private int _EmrErxExperienceTypeID;
 		
@@ -1845,30 +4931,32 @@ namespace PSL.DAL
 		
 		private int _StatusID;
 		
-		private EntitySet<tblPositionType> _tblPositionTypes;
+		private System.DateTime _LastModifiedDate;
 		
-		private EntitySet<tblServiceType> _tblServiceTypes;
+		private string _LastModifiedBy;
 		
-		private EntitySet<tblAvailability> _tblAvailabilities;
+		private EntityRef<tblAvailability> _tblAvailability;
 		
-		private EntitySet<tblYearsExperience> _tblYearsExperiences;
+		private EntityRef<tblEmrErxExperienceType> _tblEmrErxExperienceType;
 		
-		private EntitySet<tblAddress> _tblAddresses;
+		private EntityRef<tblGeneralStatus> _tblGeneralStatus;
 		
-		private EntitySet<tblJobJobExperienceType> _tblJobJobExperienceTypes;
+		private EntityRef<tblPositionType> _tblPositionType;
 		
-		private EntitySet<tblJobPatientPopulationType> _tblJobPatientPopulationTypes;
+		private EntityRef<tblServiceType> _tblServiceType;
 		
-		private EntitySet<tblJobLanguage> _tblJobLanguages;
+		private EntityRef<tblYearsExperience> _tblYearsExperience;
 		
-		private EntitySet<tblGeneralStatus> _tblGeneralStatus;
+		private EntityRef<tblJobPatientPopulationType> _tblJobPatientPopulationType;
+		
+		private EntityRef<tblAddress> _tblAddress;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
+    partial void OnJobIDChanging(int value);
+    partial void OnJobIDChanged();
     partial void OnTitleChanging(string value);
     partial void OnTitleChanged();
     partial void OnDescriptionChanging(string value);
@@ -1889,48 +4977,53 @@ namespace PSL.DAL
     partial void OnLanguageIDChanged();
     partial void OnServiceTypeIDChanging(int value);
     partial void OnServiceTypeIDChanged();
-    partial void OnPatientPopulationTypeChanging(string value);
-    partial void OnPatientPopulationTypeChanged();
-    partial void OnSalaryRangeChanging(string value);
-    partial void OnSalaryRangeChanged();
+    partial void OnSalaryRangeIDChanging(System.Nullable<int> value);
+    partial void OnSalaryRangeIDChanged();
     partial void OnEmrErxExperienceTypeIDChanging(int value);
     partial void OnEmrErxExperienceTypeIDChanged();
     partial void OnAvailabilityIDChanging(int value);
     partial void OnAvailabilityIDChanged();
     partial void OnStatusIDChanging(int value);
     partial void OnStatusIDChanged();
+    partial void OnLastModifiedDateChanging(System.DateTime value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(string value);
+    partial void OnLastModifiedByChanged();
     #endregion
 		
 		public tblJob()
 		{
-			this._tblPositionTypes = new EntitySet<tblPositionType>(new Action<tblPositionType>(this.attach_tblPositionTypes), new Action<tblPositionType>(this.detach_tblPositionTypes));
-			this._tblServiceTypes = new EntitySet<tblServiceType>(new Action<tblServiceType>(this.attach_tblServiceTypes), new Action<tblServiceType>(this.detach_tblServiceTypes));
-			this._tblAvailabilities = new EntitySet<tblAvailability>(new Action<tblAvailability>(this.attach_tblAvailabilities), new Action<tblAvailability>(this.detach_tblAvailabilities));
-			this._tblYearsExperiences = new EntitySet<tblYearsExperience>(new Action<tblYearsExperience>(this.attach_tblYearsExperiences), new Action<tblYearsExperience>(this.detach_tblYearsExperiences));
-			this._tblAddresses = new EntitySet<tblAddress>(new Action<tblAddress>(this.attach_tblAddresses), new Action<tblAddress>(this.detach_tblAddresses));
-			this._tblJobJobExperienceTypes = new EntitySet<tblJobJobExperienceType>(new Action<tblJobJobExperienceType>(this.attach_tblJobJobExperienceTypes), new Action<tblJobJobExperienceType>(this.detach_tblJobJobExperienceTypes));
-			this._tblJobPatientPopulationTypes = new EntitySet<tblJobPatientPopulationType>(new Action<tblJobPatientPopulationType>(this.attach_tblJobPatientPopulationTypes), new Action<tblJobPatientPopulationType>(this.detach_tblJobPatientPopulationTypes));
-			this._tblJobLanguages = new EntitySet<tblJobLanguage>(new Action<tblJobLanguage>(this.attach_tblJobLanguages), new Action<tblJobLanguage>(this.detach_tblJobLanguages));
-			this._tblGeneralStatus = new EntitySet<tblGeneralStatus>(new Action<tblGeneralStatus>(this.attach_tblGeneralStatus), new Action<tblGeneralStatus>(this.detach_tblGeneralStatus));
+			this._tblAvailability = default(EntityRef<tblAvailability>);
+			this._tblEmrErxExperienceType = default(EntityRef<tblEmrErxExperienceType>);
+			this._tblGeneralStatus = default(EntityRef<tblGeneralStatus>);
+			this._tblPositionType = default(EntityRef<tblPositionType>);
+			this._tblServiceType = default(EntityRef<tblServiceType>);
+			this._tblYearsExperience = default(EntityRef<tblYearsExperience>);
+			this._tblJobPatientPopulationType = default(EntityRef<tblJobPatientPopulationType>);
+			this._tblAddress = default(EntityRef<tblAddress>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int JobID
 		{
 			get
 			{
-				return this._ID;
+				return this._JobID;
 			}
 			set
 			{
-				if ((this._ID != value))
+				if ((this._JobID != value))
 				{
-					this.OnIDChanging(value);
+					if (this._tblJobPatientPopulationType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnJobIDChanging(value);
 					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
+					this._JobID = value;
+					this.SendPropertyChanged("JobID");
+					this.OnJobIDChanged();
 				}
 			}
 		}
@@ -1975,7 +5068,7 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int AddressID
 		{
 			get
@@ -1986,6 +5079,10 @@ namespace PSL.DAL
 			{
 				if ((this._AddressID != value))
 				{
+					if (this._tblAddress.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAddressIDChanging(value);
 					this.SendPropertyChanging();
 					this._AddressID = value;
@@ -2006,6 +5103,10 @@ namespace PSL.DAL
 			{
 				if ((this._YearsExpID != value))
 				{
+					if (this._tblYearsExperience.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnYearsExpIDChanging(value);
 					this.SendPropertyChanging();
 					this._YearsExpID = value;
@@ -2086,6 +5187,10 @@ namespace PSL.DAL
 			{
 				if ((this._PositionTypeID != value))
 				{
+					if (this._tblPositionType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPositionTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._PositionTypeID = value;
@@ -2126,6 +5231,10 @@ namespace PSL.DAL
 			{
 				if ((this._ServiceTypeID != value))
 				{
+					if (this._tblServiceType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnServiceTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._ServiceTypeID = value;
@@ -2135,42 +5244,22 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PatientPopulationType", DbType="VarChar(150)")]
-		public string PatientPopulationType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryRangeID", DbType="Int")]
+		public System.Nullable<int> SalaryRangeID
 		{
 			get
 			{
-				return this._PatientPopulationType;
+				return this._SalaryRangeID;
 			}
 			set
 			{
-				if ((this._PatientPopulationType != value))
+				if ((this._SalaryRangeID != value))
 				{
-					this.OnPatientPopulationTypeChanging(value);
+					this.OnSalaryRangeIDChanging(value);
 					this.SendPropertyChanging();
-					this._PatientPopulationType = value;
-					this.SendPropertyChanged("PatientPopulationType");
-					this.OnPatientPopulationTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalaryRange", DbType="VarChar(15)")]
-		public string SalaryRange
-		{
-			get
-			{
-				return this._SalaryRange;
-			}
-			set
-			{
-				if ((this._SalaryRange != value))
-				{
-					this.OnSalaryRangeChanging(value);
-					this.SendPropertyChanging();
-					this._SalaryRange = value;
-					this.SendPropertyChanged("SalaryRange");
-					this.OnSalaryRangeChanged();
+					this._SalaryRangeID = value;
+					this.SendPropertyChanged("SalaryRangeID");
+					this.OnSalaryRangeIDChanged();
 				}
 			}
 		}
@@ -2186,6 +5275,10 @@ namespace PSL.DAL
 			{
 				if ((this._EmrErxExperienceTypeID != value))
 				{
+					if (this._tblEmrErxExperienceType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnEmrErxExperienceTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._EmrErxExperienceTypeID = value;
@@ -2206,6 +5299,10 @@ namespace PSL.DAL
 			{
 				if ((this._AvailabilityID != value))
 				{
+					if (this._tblAvailability.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAvailabilityIDChanging(value);
 					this.SendPropertyChanging();
 					this._AvailabilityID = value;
@@ -2226,6 +5323,10 @@ namespace PSL.DAL
 			{
 				if ((this._StatusID != value))
 				{
+					if (this._tblGeneralStatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnStatusIDChanging(value);
 					this.SendPropertyChanging();
 					this._StatusID = value;
@@ -2235,1403 +5336,314 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblPositionType", Storage="_tblPositionTypes", ThisKey="PositionTypeID", OtherKey="PositionTypeID")]
-		public EntitySet<tblPositionType> tblPositionTypes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime LastModifiedDate
 		{
 			get
 			{
-				return this._tblPositionTypes;
+				return this._LastModifiedDate;
 			}
 			set
 			{
-				this._tblPositionTypes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblServiceType", Storage="_tblServiceTypes", ThisKey="ServiceTypeID", OtherKey="ServiceTypeID")]
-		public EntitySet<tblServiceType> tblServiceTypes
-		{
-			get
-			{
-				return this._tblServiceTypes;
-			}
-			set
-			{
-				this._tblServiceTypes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblAvailability", Storage="_tblAvailabilities", ThisKey="AvailabilityID", OtherKey="AvailabilityID")]
-		public EntitySet<tblAvailability> tblAvailabilities
-		{
-			get
-			{
-				return this._tblAvailabilities;
-			}
-			set
-			{
-				this._tblAvailabilities.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblYearsExperience", Storage="_tblYearsExperiences", ThisKey="YearsExpID", OtherKey="YearExpID")]
-		public EntitySet<tblYearsExperience> tblYearsExperiences
-		{
-			get
-			{
-				return this._tblYearsExperiences;
-			}
-			set
-			{
-				this._tblYearsExperiences.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblAddress", Storage="_tblAddresses", ThisKey="AddressID", OtherKey="AddressID")]
-		public EntitySet<tblAddress> tblAddresses
-		{
-			get
-			{
-				return this._tblAddresses;
-			}
-			set
-			{
-				this._tblAddresses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobJobExperienceType", Storage="_tblJobJobExperienceTypes", ThisKey="ID", OtherKey="JobID")]
-		public EntitySet<tblJobJobExperienceType> tblJobJobExperienceTypes
-		{
-			get
-			{
-				return this._tblJobJobExperienceTypes;
-			}
-			set
-			{
-				this._tblJobJobExperienceTypes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobPatientPopulationType", Storage="_tblJobPatientPopulationTypes", ThisKey="ID", OtherKey="JobID")]
-		public EntitySet<tblJobPatientPopulationType> tblJobPatientPopulationTypes
-		{
-			get
-			{
-				return this._tblJobPatientPopulationTypes;
-			}
-			set
-			{
-				this._tblJobPatientPopulationTypes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobLanguage", Storage="_tblJobLanguages", ThisKey="ID", OtherKey="JobID")]
-		public EntitySet<tblJobLanguage> tblJobLanguages
-		{
-			get
-			{
-				return this._tblJobLanguages;
-			}
-			set
-			{
-				this._tblJobLanguages.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblGeneralStatus", Storage="_tblGeneralStatus", ThisKey="StatusID", OtherKey="StatusID")]
-		public EntitySet<tblGeneralStatus> tblGeneralStatus
-		{
-			get
-			{
-				return this._tblGeneralStatus;
-			}
-			set
-			{
-				this._tblGeneralStatus.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblPositionTypes(tblPositionType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblPositionTypes(tblPositionType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblServiceTypes(tblServiceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblServiceTypes(tblServiceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblAvailabilities(tblAvailability entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblAvailabilities(tblAvailability entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblYearsExperiences(tblYearsExperience entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblYearsExperiences(tblYearsExperience entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblAddresses(tblAddress entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblAddresses(tblAddress entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblJobJobExperienceTypes(tblJobJobExperienceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblJobJobExperienceTypes(tblJobJobExperienceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblJobPatientPopulationTypes(tblJobPatientPopulationType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblJobPatientPopulationTypes(tblJobPatientPopulationType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblJobLanguages(tblJobLanguage entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblJobLanguages(tblJobLanguage entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-		
-		private void attach_tblGeneralStatus(tblGeneralStatus entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = this;
-		}
-		
-		private void detach_tblGeneralStatus(tblGeneralStatus entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJob = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianLanguage")]
-	public partial class tblClinicianLanguage
-	{
-		
-		private int _ID;
-		
-		private int _ClinicianID;
-		
-		private int _LanguageID;
-		
-		public tblClinicianLanguage()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
+				if ((this._LastModifiedDate != value))
 				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL")]
-		public int ClinicianID
-		{
-			get
-			{
-				return this._ClinicianID;
-			}
-			set
-			{
-				if ((this._ClinicianID != value))
-				{
-					this._ClinicianID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", DbType="Int NOT NULL")]
-		public int LanguageID
-		{
-			get
-			{
-				return this._LanguageID;
-			}
-			set
-			{
-				if ((this._LanguageID != value))
-				{
-					this._LanguageID = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLanguages")]
-	public partial class tblLanguage : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _LanguageID;
-		
-		private string _Language;
-		
-		private System.Nullable<int> _Order;
-		
-		private EntityRef<tblJobLanguage> _tblJobLanguage;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnLanguageIDChanging(int value);
-    partial void OnLanguageIDChanged();
-    partial void OnLanguageChanging(string value);
-    partial void OnLanguageChanged();
-    partial void OnOrderChanging(System.Nullable<int> value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblLanguage()
-		{
-			this._tblJobLanguage = default(EntityRef<tblJobLanguage>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int LanguageID
-		{
-			get
-			{
-				return this._LanguageID;
-			}
-			set
-			{
-				if ((this._LanguageID != value))
-				{
-					if (this._tblJobLanguage.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnLanguageIDChanging(value);
+					this.OnLastModifiedDateChanging(value);
 					this.SendPropertyChanging();
-					this._LanguageID = value;
-					this.SendPropertyChanged("LanguageID");
-					this.OnLanguageIDChanged();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Language", DbType="VarChar(25)")]
-		public string Language
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string LastModifiedBy
 		{
 			get
 			{
-				return this._Language;
+				return this._LastModifiedBy;
 			}
 			set
 			{
-				if ((this._Language != value))
+				if ((this._LastModifiedBy != value))
 				{
-					this.OnLanguageChanging(value);
+					this.OnLastModifiedByChanging(value);
 					this.SendPropertyChanging();
-					this._Language = value;
-					this.SendPropertyChanged("Language");
-					this.OnLanguageChanged();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
-		public System.Nullable<int> Order
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAvailability_tblJob", Storage="_tblAvailability", ThisKey="AvailabilityID", OtherKey="AvailabilityID", IsForeignKey=true)]
+		public tblAvailability tblAvailability
 		{
 			get
 			{
-				return this._Order;
+				return this._tblAvailability.Entity;
 			}
 			set
 			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobLanguage_tblLanguage", Storage="_tblJobLanguage", ThisKey="LanguageID", OtherKey="LanguageID", IsForeignKey=true)]
-		public tblJobLanguage tblJobLanguage
-		{
-			get
-			{
-				return this._tblJobLanguage.Entity;
-			}
-			set
-			{
-				tblJobLanguage previousValue = this._tblJobLanguage.Entity;
+				tblAvailability previousValue = this._tblAvailability.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJobLanguage.HasLoadedOrAssignedValue == false)))
+							|| (this._tblAvailability.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJobLanguage.Entity = null;
-						previousValue.tblLanguages.Remove(this);
+						this._tblAvailability.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJobLanguage.Entity = value;
+					this._tblAvailability.Entity = value;
 					if ((value != null))
 					{
-						value.tblLanguages.Add(this);
-						this._LanguageID = value.LanguageID;
+						value.tblJobs.Add(this);
+						this._AvailabilityID = value.AvailabilityID;
 					}
 					else
 					{
-						this._LanguageID = default(int);
+						this._AvailabilityID = default(int);
 					}
-					this.SendPropertyChanged("tblJobLanguage");
+					this.SendPropertyChanged("tblAvailability");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblPositionType")]
-	public partial class tblPositionType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _PositionTypeID;
-		
-		private string _Value;
-		
-		private int _Order;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPositionTypeIDChanging(int value);
-    partial void OnPositionTypeIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblPositionType()
-		{
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int PositionTypeID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmrErxExperienceType_tblJob", Storage="_tblEmrErxExperienceType", ThisKey="EmrErxExperienceTypeID", OtherKey="EmrErxExperienceTypeID", IsForeignKey=true)]
+		public tblEmrErxExperienceType tblEmrErxExperienceType
 		{
 			get
 			{
-				return this._PositionTypeID;
+				return this._tblEmrErxExperienceType.Entity;
 			}
 			set
 			{
-				if ((this._PositionTypeID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPositionTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._PositionTypeID = value;
-					this.SendPropertyChanged("PositionTypeID");
-					this.OnPositionTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-			set
-			{
-				if ((this._Value != value))
-				{
-					this.OnValueChanging(value);
-					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblPositionType", Storage="_tblJob", ThisKey="PositionTypeID", OtherKey="PositionTypeID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblEmrErxExperienceType previousValue = this._tblEmrErxExperienceType.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblEmrErxExperienceType.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblPositionTypes.Remove(this);
+						this._tblEmrErxExperienceType.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblEmrErxExperienceType.Entity = value;
 					if ((value != null))
 					{
-						value.tblPositionTypes.Add(this);
+						value.tblJobs.Add(this);
+						this._EmrErxExperienceTypeID = value.EmrErxExperienceTypeID;
+					}
+					else
+					{
+						this._EmrErxExperienceTypeID = default(int);
+					}
+					this.SendPropertyChanged("tblEmrErxExperienceType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGeneralStatus_tblJob", Storage="_tblGeneralStatus", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
+		public tblGeneralStatus tblGeneralStatus
+		{
+			get
+			{
+				return this._tblGeneralStatus.Entity;
+			}
+			set
+			{
+				tblGeneralStatus previousValue = this._tblGeneralStatus.Entity;
+				if (((previousValue != value) 
+							|| (this._tblGeneralStatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblGeneralStatus.Entity = null;
+						previousValue.tblJobs.Remove(this);
+					}
+					this._tblGeneralStatus.Entity = value;
+					if ((value != null))
+					{
+						value.tblJobs.Add(this);
+						this._StatusID = value.StatusID;
+					}
+					else
+					{
+						this._StatusID = default(int);
+					}
+					this.SendPropertyChanged("tblGeneralStatus");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPositionType_tblJob", Storage="_tblPositionType", ThisKey="PositionTypeID", OtherKey="PositionTypeID", IsForeignKey=true)]
+		public tblPositionType tblPositionType
+		{
+			get
+			{
+				return this._tblPositionType.Entity;
+			}
+			set
+			{
+				tblPositionType previousValue = this._tblPositionType.Entity;
+				if (((previousValue != value) 
+							|| (this._tblPositionType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblPositionType.Entity = null;
+						previousValue.tblJobs.Remove(this);
+					}
+					this._tblPositionType.Entity = value;
+					if ((value != null))
+					{
+						value.tblJobs.Add(this);
 						this._PositionTypeID = value.PositionTypeID;
 					}
 					else
 					{
 						this._PositionTypeID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblPositionType");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblServiceType")]
-	public partial class tblServiceType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ServiceTypeID;
-		
-		private string _Value;
-		
-		private int _Order;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnServiceTypeIDChanging(int value);
-    partial void OnServiceTypeIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblServiceType()
-		{
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ServiceTypeID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblServiceType_tblJob", Storage="_tblServiceType", ThisKey="ServiceTypeID", OtherKey="ServiceTypeID", IsForeignKey=true)]
+		public tblServiceType tblServiceType
 		{
 			get
 			{
-				return this._ServiceTypeID;
+				return this._tblServiceType.Entity;
 			}
 			set
 			{
-				if ((this._ServiceTypeID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnServiceTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceTypeID = value;
-					this.SendPropertyChanged("ServiceTypeID");
-					this.OnServiceTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-			set
-			{
-				if ((this._Value != value))
-				{
-					this.OnValueChanging(value);
-					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblServiceType", Storage="_tblJob", ThisKey="ServiceTypeID", OtherKey="ServiceTypeID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblServiceType previousValue = this._tblServiceType.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblServiceType.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblServiceTypes.Remove(this);
+						this._tblServiceType.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblServiceType.Entity = value;
 					if ((value != null))
 					{
-						value.tblServiceTypes.Add(this);
+						value.tblJobs.Add(this);
 						this._ServiceTypeID = value.ServiceTypeID;
 					}
 					else
 					{
 						this._ServiceTypeID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblServiceType");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblYearsExperience")]
-	public partial class tblYearsExperience : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _YearExpID;
-		
-		private string _Value;
-		
-		private int _Order;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnYearExpIDChanging(int value);
-    partial void OnYearExpIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblYearsExperience()
-		{
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearExpID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int YearExpID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblYearsExperience_tblJob", Storage="_tblYearsExperience", ThisKey="YearsExpID", OtherKey="YearExpID", IsForeignKey=true)]
+		public tblYearsExperience tblYearsExperience
 		{
 			get
 			{
-				return this._YearExpID;
+				return this._tblYearsExperience.Entity;
 			}
 			set
 			{
-				if ((this._YearExpID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnYearExpIDChanging(value);
-					this.SendPropertyChanging();
-					this._YearExpID = value;
-					this.SendPropertyChanged("YearExpID");
-					this.OnYearExpIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(7) NOT NULL", CanBeNull=false)]
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-			set
-			{
-				if ((this._Value != value))
-				{
-					this.OnValueChanging(value);
-					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblYearsExperience", Storage="_tblJob", ThisKey="YearExpID", OtherKey="YearsExpID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblYearsExperience previousValue = this._tblYearsExperience.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblYearsExperience.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblYearsExperiences.Remove(this);
+						this._tblYearsExperience.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblYearsExperience.Entity = value;
 					if ((value != null))
 					{
-						value.tblYearsExperiences.Add(this);
-						this._YearExpID = value.YearsExpID;
+						value.tblJobs.Add(this);
+						this._YearsExpID = value.YearExpID;
 					}
 					else
 					{
-						this._YearExpID = default(int);
+						this._YearsExpID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblYearsExperience");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobJobExperienceType")]
-	public partial class tblJobJobExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _JobID;
-		
-		private int _JobExperienceTypeID;
-		
-		private EntitySet<tblJobExperienceType> _tblJobExperienceTypes;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnJobIDChanging(int value);
-    partial void OnJobIDChanged();
-    partial void OnJobExperienceTypeIDChanging(int value);
-    partial void OnJobExperienceTypeIDChanged();
-    #endregion
-		
-		public tblJobJobExperienceType()
-		{
-			this._tblJobExperienceTypes = new EntitySet<tblJobExperienceType>(new Action<tblJobExperienceType>(this.attach_tblJobExperienceTypes), new Action<tblJobExperienceType>(this.detach_tblJobExperienceTypes));
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobPatientPopulationType_tblJob", Storage="_tblJobPatientPopulationType", ThisKey="JobID", OtherKey="JobID", IsForeignKey=true)]
+		public tblJobPatientPopulationType tblJobPatientPopulationType
 		{
 			get
 			{
-				return this._ID;
+				return this._tblJobPatientPopulationType.Entity;
 			}
 			set
 			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int JobID
-		{
-			get
-			{
-				return this._JobID;
-			}
-			set
-			{
-				if ((this._JobID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnJobIDChanging(value);
-					this.SendPropertyChanging();
-					this._JobID = value;
-					this.SendPropertyChanged("JobID");
-					this.OnJobIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="JobExperienceType", Storage="_JobExperienceTypeID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int JobExperienceTypeID
-		{
-			get
-			{
-				return this._JobExperienceTypeID;
-			}
-			set
-			{
-				if ((this._JobExperienceTypeID != value))
-				{
-					this.OnJobExperienceTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._JobExperienceTypeID = value;
-					this.SendPropertyChanged("JobExperienceTypeID");
-					this.OnJobExperienceTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobJobExperienceType_tblJobExperienceType", Storage="_tblJobExperienceTypes", ThisKey="JobExperienceTypeID", OtherKey="JobExperienceTypeID")]
-		public EntitySet<tblJobExperienceType> tblJobExperienceTypes
-		{
-			get
-			{
-				return this._tblJobExperienceTypes;
-			}
-			set
-			{
-				this._tblJobExperienceTypes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobJobExperienceType", Storage="_tblJob", ThisKey="JobID", OtherKey="ID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblJobPatientPopulationType previousValue = this._tblJobPatientPopulationType.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblJobPatientPopulationType.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblJobJobExperienceTypes.Remove(this);
+						this._tblJobPatientPopulationType.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblJobPatientPopulationType.Entity = value;
 					if ((value != null))
 					{
-						value.tblJobJobExperienceTypes.Add(this);
-						this._JobID = value.ID;
+						value.tblJobs.Add(this);
+						this._JobID = value.JobID;
 					}
 					else
 					{
 						this._JobID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblJobPatientPopulationType");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblJobExperienceTypes(tblJobExperienceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJobJobExperienceType = this;
-		}
-		
-		private void detach_tblJobExperienceTypes(tblJobExperienceType entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJobJobExperienceType = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobLanguage")]
-	public partial class tblJobLanguage : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _JobID;
-		
-		private int _LanguageID;
-		
-		private EntitySet<tblLanguage> _tblLanguages;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnJobIDChanging(int value);
-    partial void OnJobIDChanged();
-    partial void OnLanguageIDChanging(int value);
-    partial void OnLanguageIDChanged();
-    #endregion
-		
-		public tblJobLanguage()
-		{
-			this._tblLanguages = new EntitySet<tblLanguage>(new Action<tblLanguage>(this.attach_tblLanguages), new Action<tblLanguage>(this.detach_tblLanguages));
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblJob", Storage="_tblAddress", ThisKey="AddressID", OtherKey="AddressID", IsForeignKey=true)]
+		public tblAddress tblAddress
 		{
 			get
 			{
-				return this._ID;
+				return this._tblAddress.Entity;
 			}
 			set
 			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL")]
-		public int JobID
-		{
-			get
-			{
-				return this._JobID;
-			}
-			set
-			{
-				if ((this._JobID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnJobIDChanging(value);
-					this.SendPropertyChanging();
-					this._JobID = value;
-					this.SendPropertyChanged("JobID");
-					this.OnJobIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LanguageID", DbType="Int NOT NULL")]
-		public int LanguageID
-		{
-			get
-			{
-				return this._LanguageID;
-			}
-			set
-			{
-				if ((this._LanguageID != value))
-				{
-					this.OnLanguageIDChanging(value);
-					this.SendPropertyChanging();
-					this._LanguageID = value;
-					this.SendPropertyChanged("LanguageID");
-					this.OnLanguageIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobLanguage_tblLanguage", Storage="_tblLanguages", ThisKey="LanguageID", OtherKey="LanguageID")]
-		public EntitySet<tblLanguage> tblLanguages
-		{
-			get
-			{
-				return this._tblLanguages;
-			}
-			set
-			{
-				this._tblLanguages.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobLanguage", Storage="_tblJob", ThisKey="JobID", OtherKey="ID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblAddress previousValue = this._tblAddress.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblAddress.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
-						previousValue.tblJobLanguages.Remove(this);
+						this._tblAddress.Entity = null;
+						previousValue.tblJobs.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblAddress.Entity = value;
 					if ((value != null))
 					{
-						value.tblJobLanguages.Add(this);
-						this._JobID = value.ID;
+						value.tblJobs.Add(this);
+						this._AddressID = value.AddressID;
 					}
 					else
 					{
-						this._JobID = default(int);
+						this._AddressID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblLanguages(tblLanguage entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJobLanguage = this;
-		}
-		
-		private void detach_tblLanguages(tblLanguage entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblJobLanguage = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblJobExperienceType")]
-	public partial class tblJobExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _JobExperienceTypeID;
-		
-		private string _Value;
-		
-		private int _Order;
-		
-		private EntityRef<tblJobJobExperienceType> _tblJobJobExperienceType;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnJobExperienceTypeIDChanging(int value);
-    partial void OnJobExperienceTypeIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblJobExperienceType()
-		{
-			this._tblJobJobExperienceType = default(EntityRef<tblJobJobExperienceType>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobExperienceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int JobExperienceTypeID
-		{
-			get
-			{
-				return this._JobExperienceTypeID;
-			}
-			set
-			{
-				if ((this._JobExperienceTypeID != value))
-				{
-					if (this._tblJobJobExperienceType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnJobExperienceTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._JobExperienceTypeID = value;
-					this.SendPropertyChanged("JobExperienceTypeID");
-					this.OnJobExperienceTypeIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string Value
-		{
-			get
-			{
-				return this._Value;
-			}
-			set
-			{
-				if ((this._Value != value))
-				{
-					this.OnValueChanging(value);
-					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobJobExperienceType_tblJobExperienceType", Storage="_tblJobJobExperienceType", ThisKey="JobExperienceTypeID", OtherKey="JobExperienceTypeID", IsForeignKey=true)]
-		public tblJobJobExperienceType tblJobJobExperienceType
-		{
-			get
-			{
-				return this._tblJobJobExperienceType.Entity;
-			}
-			set
-			{
-				tblJobJobExperienceType previousValue = this._tblJobJobExperienceType.Entity;
-				if (((previousValue != value) 
-							|| (this._tblJobJobExperienceType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblJobJobExperienceType.Entity = null;
-						previousValue.tblJobExperienceTypes.Remove(this);
-					}
-					this._tblJobJobExperienceType.Entity = value;
-					if ((value != null))
-					{
-						value.tblJobExperienceTypes.Add(this);
-						this._JobExperienceTypeID = value.JobExperienceTypeID;
-					}
-					else
-					{
-						this._JobExperienceTypeID = default(int);
-					}
-					this.SendPropertyChanged("tblJobJobExperienceType");
+					this.SendPropertyChanged("tblAddress");
 				}
 			}
 		}
@@ -3669,9 +5681,9 @@ namespace PSL.DAL
 		
 		private int _PatientPopulationTypeID;
 		
-		private EntitySet<tblPatientPopulationType> _tblPatientPopulationTypes;
+		private EntitySet<tblJob> _tblJobs;
 		
-		private EntityRef<tblJob> _tblJob;
+		private EntityRef<tblPatientPopulationType> _tblPatientPopulationType;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3687,8 +5699,8 @@ namespace PSL.DAL
 		
 		public tblJobPatientPopulationType()
 		{
-			this._tblPatientPopulationTypes = new EntitySet<tblPatientPopulationType>(new Action<tblPatientPopulationType>(this.attach_tblPatientPopulationTypes), new Action<tblPatientPopulationType>(this.detach_tblPatientPopulationTypes));
-			this._tblJob = default(EntityRef<tblJob>);
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
+			this._tblPatientPopulationType = default(EntityRef<tblPatientPopulationType>);
 			OnCreated();
 		}
 		
@@ -3723,10 +5735,6 @@ namespace PSL.DAL
 			{
 				if ((this._JobID != value))
 				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnJobIDChanging(value);
 					this.SendPropertyChanging();
 					this._JobID = value;
@@ -3747,6 +5755,10 @@ namespace PSL.DAL
 			{
 				if ((this._PatientPopulationTypeID != value))
 				{
+					if (this._tblPatientPopulationType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPatientPopulationTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._PatientPopulationTypeID = value;
@@ -3756,49 +5768,49 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobPatientPopulationType_tblPatientPopulationType", Storage="_tblPatientPopulationTypes", ThisKey="PatientPopulationTypeID", OtherKey="PatientPopulationTypeID")]
-		public EntitySet<tblPatientPopulationType> tblPatientPopulationTypes
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobPatientPopulationType_tblJob", Storage="_tblJobs", ThisKey="JobID", OtherKey="JobID")]
+		public EntitySet<tblJob> tblJobs
 		{
 			get
 			{
-				return this._tblPatientPopulationTypes;
+				return this._tblJobs;
 			}
 			set
 			{
-				this._tblPatientPopulationTypes.Assign(value);
+				this._tblJobs.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblJobPatientPopulationType", Storage="_tblJob", ThisKey="JobID", OtherKey="ID", IsForeignKey=true)]
-		public tblJob tblJob
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPatientPopulationType_tblJobPatientPopulationType", Storage="_tblPatientPopulationType", ThisKey="PatientPopulationTypeID", OtherKey="PatientPopulationTypeID", IsForeignKey=true)]
+		public tblPatientPopulationType tblPatientPopulationType
 		{
 			get
 			{
-				return this._tblJob.Entity;
+				return this._tblPatientPopulationType.Entity;
 			}
 			set
 			{
-				tblJob previousValue = this._tblJob.Entity;
+				tblPatientPopulationType previousValue = this._tblPatientPopulationType.Entity;
 				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
+							|| (this._tblPatientPopulationType.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tblJob.Entity = null;
+						this._tblPatientPopulationType.Entity = null;
 						previousValue.tblJobPatientPopulationTypes.Remove(this);
 					}
-					this._tblJob.Entity = value;
+					this._tblPatientPopulationType.Entity = value;
 					if ((value != null))
 					{
 						value.tblJobPatientPopulationTypes.Add(this);
-						this._JobID = value.ID;
+						this._PatientPopulationTypeID = value.PatientPopulationTypeID;
 					}
 					else
 					{
-						this._JobID = default(int);
+						this._PatientPopulationTypeID = default(int);
 					}
-					this.SendPropertyChanged("tblJob");
+					this.SendPropertyChanged("tblPatientPopulationType");
 				}
 			}
 		}
@@ -3823,13 +5835,13 @@ namespace PSL.DAL
 			}
 		}
 		
-		private void attach_tblPatientPopulationTypes(tblPatientPopulationType entity)
+		private void attach_tblJobs(tblJob entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblJobPatientPopulationType = this;
 		}
 		
-		private void detach_tblPatientPopulationTypes(tblPatientPopulationType entity)
+		private void detach_tblJobs(tblJob entity)
 		{
 			this.SendPropertyChanging();
 			entity.tblJobPatientPopulationType = null;
@@ -3848,7 +5860,7 @@ namespace PSL.DAL
 		
 		private int _Order;
 		
-		private EntityRef<tblJobPatientPopulationType> _tblJobPatientPopulationType;
+		private EntitySet<tblJobPatientPopulationType> _tblJobPatientPopulationTypes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3864,7 +5876,7 @@ namespace PSL.DAL
 		
 		public tblPatientPopulationType()
 		{
-			this._tblJobPatientPopulationType = default(EntityRef<tblJobPatientPopulationType>);
+			this._tblJobPatientPopulationTypes = new EntitySet<tblJobPatientPopulationType>(new Action<tblJobPatientPopulationType>(this.attach_tblJobPatientPopulationTypes), new Action<tblJobPatientPopulationType>(this.detach_tblJobPatientPopulationTypes));
 			OnCreated();
 		}
 		
@@ -3879,10 +5891,6 @@ namespace PSL.DAL
 			{
 				if ((this._PatientPopulationTypeID != value))
 				{
-					if (this._tblJobPatientPopulationType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnPatientPopulationTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._PatientPopulationTypeID = value;
@@ -3932,37 +5940,16 @@ namespace PSL.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJobPatientPopulationType_tblPatientPopulationType", Storage="_tblJobPatientPopulationType", ThisKey="PatientPopulationTypeID", OtherKey="PatientPopulationTypeID", IsForeignKey=true)]
-		public tblJobPatientPopulationType tblJobPatientPopulationType
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblPatientPopulationType_tblJobPatientPopulationType", Storage="_tblJobPatientPopulationTypes", ThisKey="PatientPopulationTypeID", OtherKey="PatientPopulationTypeID")]
+		public EntitySet<tblJobPatientPopulationType> tblJobPatientPopulationTypes
 		{
 			get
 			{
-				return this._tblJobPatientPopulationType.Entity;
+				return this._tblJobPatientPopulationTypes;
 			}
 			set
 			{
-				tblJobPatientPopulationType previousValue = this._tblJobPatientPopulationType.Entity;
-				if (((previousValue != value) 
-							|| (this._tblJobPatientPopulationType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblJobPatientPopulationType.Entity = null;
-						previousValue.tblPatientPopulationTypes.Remove(this);
-					}
-					this._tblJobPatientPopulationType.Entity = value;
-					if ((value != null))
-					{
-						value.tblPatientPopulationTypes.Add(this);
-						this._PatientPopulationTypeID = value.PatientPopulationTypeID;
-					}
-					else
-					{
-						this._PatientPopulationTypeID = default(int);
-					}
-					this.SendPropertyChanged("tblJobPatientPopulationType");
-				}
+				this._tblJobPatientPopulationTypes.Assign(value);
 			}
 		}
 		
@@ -3985,135 +5972,322 @@ namespace PSL.DAL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_tblJobPatientPopulationTypes(tblJobPatientPopulationType entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblPatientPopulationType = this;
+		}
+		
+		private void detach_tblJobPatientPopulationTypes(tblJobPatientPopulationType entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblPatientPopulationType = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianType")]
-	public partial class tblClinicianType : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblAddress")]
+	public partial class tblAddress : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ClinicianTypeID;
+		private int _AddressID;
 		
-		private string _Type;
+		private string _AddressLine1;
 		
-		private int _Order;
+		private string _AddressLine2;
 		
-		private EntityRef<tblClinician> _tblClinician;
+		private string _City;
+		
+		private string _State;
+		
+		private string _Zip;
+		
+		private System.Nullable<decimal> _Longitude;
+		
+		private System.Nullable<decimal> _Latitude;
+		
+		private System.Nullable<System.DateTime> _LastModifiedDate;
+		
+		private string _LastModifiedBy;
+		
+		private EntitySet<tblClinician> _tblClinicians;
+		
+		private EntitySet<tblEmployer> _tblEmployers;
+		
+		private EntitySet<tblJob> _tblJobs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnClinicianTypeIDChanging(int value);
-    partial void OnClinicianTypeIDChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnOrderChanging(int value);
-    partial void OnOrderChanged();
+    partial void OnAddressIDChanging(int value);
+    partial void OnAddressIDChanged();
+    partial void OnAddressLine1Changing(string value);
+    partial void OnAddressLine1Changed();
+    partial void OnAddressLine2Changing(string value);
+    partial void OnAddressLine2Changed();
+    partial void OnCityChanging(string value);
+    partial void OnCityChanged();
+    partial void OnStateChanging(string value);
+    partial void OnStateChanged();
+    partial void OnZipChanging(string value);
+    partial void OnZipChanged();
+    partial void OnLongitudeChanging(System.Nullable<decimal> value);
+    partial void OnLongitudeChanged();
+    partial void OnLatitudeChanging(System.Nullable<decimal> value);
+    partial void OnLatitudeChanged();
+    partial void OnLastModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastModifiedDateChanged();
+    partial void OnLastModifiedByChanging(string value);
+    partial void OnLastModifiedByChanged();
     #endregion
 		
-		public tblClinicianType()
+		public tblAddress()
 		{
-			this._tblClinician = default(EntityRef<tblClinician>);
+			this._tblClinicians = new EntitySet<tblClinician>(new Action<tblClinician>(this.attach_tblClinicians), new Action<tblClinician>(this.detach_tblClinicians));
+			this._tblEmployers = new EntitySet<tblEmployer>(new Action<tblEmployer>(this.attach_tblEmployers), new Action<tblEmployer>(this.detach_tblEmployers));
+			this._tblJobs = new EntitySet<tblJob>(new Action<tblJob>(this.attach_tblJobs), new Action<tblJob>(this.detach_tblJobs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ClinicianTypeID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AddressID
 		{
 			get
 			{
-				return this._ClinicianTypeID;
+				return this._AddressID;
 			}
 			set
 			{
-				if ((this._ClinicianTypeID != value))
+				if ((this._AddressID != value))
 				{
-					if (this._tblClinician.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnClinicianTypeIDChanging(value);
+					this.OnAddressIDChanging(value);
 					this.SendPropertyChanging();
-					this._ClinicianTypeID = value;
-					this.SendPropertyChanged("ClinicianTypeID");
-					this.OnClinicianTypeIDChanged();
+					this._AddressID = value;
+					this.SendPropertyChanged("AddressID");
+					this.OnAddressIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressLine1", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string AddressLine1
 		{
 			get
 			{
-				return this._Type;
+				return this._AddressLine1;
 			}
 			set
 			{
-				if ((this._Type != value))
+				if ((this._AddressLine1 != value))
 				{
-					this.OnTypeChanging(value);
+					this.OnAddressLine1Changing(value);
 					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
+					this._AddressLine1 = value;
+					this.SendPropertyChanged("AddressLine1");
+					this.OnAddressLine1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int NOT NULL")]
-		public int Order
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddressLine2", DbType="VarChar(150)")]
+		public string AddressLine2
 		{
 			get
 			{
-				return this._Order;
+				return this._AddressLine2;
 			}
 			set
 			{
-				if ((this._Order != value))
+				if ((this._AddressLine2 != value))
 				{
-					this.OnOrderChanging(value);
+					this.OnAddressLine2Changing(value);
 					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
+					this._AddressLine2 = value;
+					this.SendPropertyChanged("AddressLine2");
+					this.OnAddressLine2Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblClinicianType", Storage="_tblClinician", ThisKey="ClinicianTypeID", OtherKey="ClinicianTypeID", IsForeignKey=true)]
-		public tblClinician tblClinician
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string City
 		{
 			get
 			{
-				return this._tblClinician.Entity;
+				return this._City;
 			}
 			set
 			{
-				tblClinician previousValue = this._tblClinician.Entity;
-				if (((previousValue != value) 
-							|| (this._tblClinician.HasLoadedOrAssignedValue == false)))
+				if ((this._City != value))
 				{
+					this.OnCityChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblClinician.Entity = null;
-						previousValue.tblClinicianTypes.Remove(this);
-					}
-					this._tblClinician.Entity = value;
-					if ((value != null))
-					{
-						value.tblClinicianTypes.Add(this);
-						this._ClinicianTypeID = value.ClinicianTypeID;
-					}
-					else
-					{
-						this._ClinicianTypeID = default(int);
-					}
-					this.SendPropertyChanged("tblClinician");
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this.OnStateChanging(value);
+					this.SendPropertyChanging();
+					this._State = value;
+					this.SendPropertyChanged("State");
+					this.OnStateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zip", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string Zip
+		{
+			get
+			{
+				return this._Zip;
+			}
+			set
+			{
+				if ((this._Zip != value))
+				{
+					this.OnZipChanging(value);
+					this.SendPropertyChanging();
+					this._Zip = value;
+					this.SendPropertyChanged("Zip");
+					this.OnZipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(9,6)")]
+		public System.Nullable<decimal> Longitude
+		{
+			get
+			{
+				return this._Longitude;
+			}
+			set
+			{
+				if ((this._Longitude != value))
+				{
+					this.OnLongitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Longitude = value;
+					this.SendPropertyChanged("Longitude");
+					this.OnLongitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(9,6)")]
+		public System.Nullable<decimal> Latitude
+		{
+			get
+			{
+				return this._Latitude;
+			}
+			set
+			{
+				if ((this._Latitude != value))
+				{
+					this.OnLatitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Latitude = value;
+					this.SendPropertyChanged("Latitude");
+					this.OnLatitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastModifiedDate
+		{
+			get
+			{
+				return this._LastModifiedDate;
+			}
+			set
+			{
+				if ((this._LastModifiedDate != value))
+				{
+					this.OnLastModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedDate = value;
+					this.SendPropertyChanged("LastModifiedDate");
+					this.OnLastModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastModifiedBy", DbType="VarChar(25)")]
+		public string LastModifiedBy
+		{
+			get
+			{
+				return this._LastModifiedBy;
+			}
+			set
+			{
+				if ((this._LastModifiedBy != value))
+				{
+					this.OnLastModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._LastModifiedBy = value;
+					this.SendPropertyChanged("LastModifiedBy");
+					this.OnLastModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblClinician", Storage="_tblClinicians", ThisKey="AddressID", OtherKey="AddressID")]
+		public EntitySet<tblClinician> tblClinicians
+		{
+			get
+			{
+				return this._tblClinicians;
+			}
+			set
+			{
+				this._tblClinicians.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblEmployer", Storage="_tblEmployers", ThisKey="AddressID", OtherKey="AddressID")]
+		public EntitySet<tblEmployer> tblEmployers
+		{
+			get
+			{
+				return this._tblEmployers;
+			}
+			set
+			{
+				this._tblEmployers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblAddress_tblJob", Storage="_tblJobs", ThisKey="AddressID", OtherKey="AddressID")]
+		public EntitySet<tblJob> tblJobs
+		{
+			get
+			{
+				return this._tblJobs;
+			}
+			set
+			{
+				this._tblJobs.Assign(value);
 			}
 		}
 		
@@ -4136,523 +6310,41 @@ namespace PSL.DAL
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmrErxExperienceType")]
-	public partial class tblEmrErxExperienceType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _EmrErxExperienceTypeID;
-		
-		private string _Value;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEmrErxExperienceTypeIDChanging(int value);
-    partial void OnEmrErxExperienceTypeIDChanged();
-    partial void OnValueChanging(string value);
-    partial void OnValueChanged();
-    #endregion
-		
-		public tblEmrErxExperienceType()
+		private void attach_tblClinicians(tblClinician entity)
 		{
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.tblAddress = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmrErxExperienceTypeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int EmrErxExperienceTypeID
+		private void detach_tblClinicians(tblClinician entity)
 		{
-			get
-			{
-				return this._EmrErxExperienceTypeID;
-			}
-			set
-			{
-				if ((this._EmrErxExperienceTypeID != value))
-				{
-					this.OnEmrErxExperienceTypeIDChanging(value);
-					this.SendPropertyChanging();
-					this._EmrErxExperienceTypeID = value;
-					this.SendPropertyChanged("EmrErxExperienceTypeID");
-					this.OnEmrErxExperienceTypeIDChanged();
-				}
-			}
+			this.SendPropertyChanging();
+			entity.tblAddress = null;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Value
+		private void attach_tblEmployers(tblEmployer entity)
 		{
-			get
-			{
-				return this._Value;
-			}
-			set
-			{
-				if ((this._Value != value))
-				{
-					this.OnValueChanging(value);
-					this.SendPropertyChanging();
-					this._Value = value;
-					this.SendPropertyChanged("Value");
-					this.OnValueChanged();
-				}
-			}
+			this.SendPropertyChanging();
+			entity.tblAddress = this;
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
+		private void detach_tblEmployers(tblEmployer entity)
 		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
+			this.SendPropertyChanging();
+			entity.tblAddress = null;
 		}
 		
-		protected virtual void SendPropertyChanged(String propertyName)
+		private void attach_tblJobs(tblJob entity)
 		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEmployerClinicianStatus")]
-	public partial class tblEmployerClinicianStatus : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _StatusID;
-		
-		private string _Status;
-		
-		private System.Nullable<int> _Order;
-		
-		private EntityRef<tblClinician> _tblClinician;
-		
-		private EntityRef<tblEmployer> _tblEmployer;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStatusIDChanging(int value);
-    partial void OnStatusIDChanged();
-    partial void OnStatusChanging(string value);
-    partial void OnStatusChanged();
-    partial void OnOrderChanging(System.Nullable<int> value);
-    partial void OnOrderChanged();
-    #endregion
-		
-		public tblEmployerClinicianStatus()
-		{
-			this._tblClinician = default(EntityRef<tblClinician>);
-			this._tblEmployer = default(EntityRef<tblEmployer>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.tblAddress = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int StatusID
+		private void detach_tblJobs(tblJob entity)
 		{
-			get
-			{
-				return this._StatusID;
-			}
-			set
-			{
-				if ((this._StatusID != value))
-				{
-					if ((this._tblClinician.HasLoadedOrAssignedValue || this._tblEmployer.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStatusIDChanging(value);
-					this.SendPropertyChanging();
-					this._StatusID = value;
-					this.SendPropertyChanged("StatusID");
-					this.OnStatusIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Order]", Storage="_Order", DbType="Int")]
-		public System.Nullable<int> Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				if ((this._Order != value))
-				{
-					this.OnOrderChanging(value);
-					this.SendPropertyChanging();
-					this._Order = value;
-					this.SendPropertyChanged("Order");
-					this.OnOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblClinician_tblEmployerClinicianStatus", Storage="_tblClinician", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
-		public tblClinician tblClinician
-		{
-			get
-			{
-				return this._tblClinician.Entity;
-			}
-			set
-			{
-				tblClinician previousValue = this._tblClinician.Entity;
-				if (((previousValue != value) 
-							|| (this._tblClinician.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblClinician.Entity = null;
-						previousValue.tblEmployerClinicianStatus.Remove(this);
-					}
-					this._tblClinician.Entity = value;
-					if ((value != null))
-					{
-						value.tblEmployerClinicianStatus.Add(this);
-						this._StatusID = value.StatusID;
-					}
-					else
-					{
-						this._StatusID = default(int);
-					}
-					this.SendPropertyChanged("tblClinician");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblEmployer_tblEmployerClinicianStatus", Storage="_tblEmployer", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
-		public tblEmployer tblEmployer
-		{
-			get
-			{
-				return this._tblEmployer.Entity;
-			}
-			set
-			{
-				tblEmployer previousValue = this._tblEmployer.Entity;
-				if (((previousValue != value) 
-							|| (this._tblEmployer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblEmployer.Entity = null;
-						previousValue.tblEmployerClinicianStatus.Remove(this);
-					}
-					this._tblEmployer.Entity = value;
-					if ((value != null))
-					{
-						value.tblEmployerClinicianStatus.Add(this);
-						this._StatusID = value.StatusID;
-					}
-					else
-					{
-						this._StatusID = default(int);
-					}
-					this.SendPropertyChanged("tblEmployer");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblGeneralStatus")]
-	public partial class tblGeneralStatus : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _StatusID;
-		
-		private string _Status;
-		
-		private EntityRef<tblJob> _tblJob;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStatusIDChanging(int value);
-    partial void OnStatusIDChanged();
-    partial void OnStatusChanging(string value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public tblGeneralStatus()
-		{
-			this._tblJob = default(EntityRef<tblJob>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int StatusID
-		{
-			get
-			{
-				return this._StatusID;
-			}
-			set
-			{
-				if ((this._StatusID != value))
-				{
-					if (this._tblJob.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStatusIDChanging(value);
-					this.SendPropertyChanging();
-					this._StatusID = value;
-					this.SendPropertyChanged("StatusID");
-					this.OnStatusIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblJob_tblGeneralStatus", Storage="_tblJob", ThisKey="StatusID", OtherKey="StatusID", IsForeignKey=true)]
-		public tblJob tblJob
-		{
-			get
-			{
-				return this._tblJob.Entity;
-			}
-			set
-			{
-				tblJob previousValue = this._tblJob.Entity;
-				if (((previousValue != value) 
-							|| (this._tblJob.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblJob.Entity = null;
-						previousValue.tblGeneralStatus.Remove(this);
-					}
-					this._tblJob.Entity = value;
-					if ((value != null))
-					{
-						value.tblGeneralStatus.Add(this);
-						this._StatusID = value.StatusID;
-					}
-					else
-					{
-						this._StatusID = default(int);
-					}
-					this.SendPropertyChanged("tblJob");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblClinicianJobs")]
-	public partial class tblClinicianJob
-	{
-		
-		private System.Nullable<int> _ID;
-		
-		private int _ClinicianID;
-		
-		private int _JobID;
-		
-		private int _StatusID;
-		
-		private System.DateTime _MatchDate;
-		
-		private string _MatchBy;
-		
-		public tblClinicianJob()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL")]
-		public int ClinicianID
-		{
-			get
-			{
-				return this._ClinicianID;
-			}
-			set
-			{
-				if ((this._ClinicianID != value))
-				{
-					this._ClinicianID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="Int NOT NULL")]
-		public int JobID
-		{
-			get
-			{
-				return this._JobID;
-			}
-			set
-			{
-				if ((this._JobID != value))
-				{
-					this._JobID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusID", DbType="Int NOT NULL")]
-		public int StatusID
-		{
-			get
-			{
-				return this._StatusID;
-			}
-			set
-			{
-				if ((this._StatusID != value))
-				{
-					this._StatusID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchDate", DbType="DateTime NOT NULL")]
-		public System.DateTime MatchDate
-		{
-			get
-			{
-				return this._MatchDate;
-			}
-			set
-			{
-				if ((this._MatchDate != value))
-				{
-					this._MatchDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatchBy", DbType="VarChar(25)")]
-		public string MatchBy
-		{
-			get
-			{
-				return this._MatchBy;
-			}
-			set
-			{
-				if ((this._MatchBy != value))
-				{
-					this._MatchBy = value;
-				}
-			}
+			this.SendPropertyChanging();
+			entity.tblAddress = null;
 		}
 	}
 }

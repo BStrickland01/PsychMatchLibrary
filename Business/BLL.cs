@@ -44,10 +44,12 @@ namespace PSL
             return dc.tblClinicianLanguages.Where(x => x.ClinicianID == clinicianID).ToList();
         }
 
-        public List<tblClinicianJob> GetClinicianJobs(int clinicianID)
+        public List<tblJobClinicianMatch> GetJobMatchesByClinician(int clinicianID)
         {
-            return dc.tblClinicianJobs.Where(x => x.ClinicianID == clinicianID).ToList();
+            return dc.tblJobClinicianMatches.Where(x => x.ClinicianID == clinicianID).ToList();
         }
+
+
         #endregion *** Clinicians ***
 
         #region  *** Employers ***
@@ -100,6 +102,38 @@ namespace PSL
         {
             return dc.tblAddresses.FirstOrDefault(x => x.AddressID == addressID);
         }
+
+        public int UpsertAddress(tblAddress address)
+        {
+            if(address.AddressID == 0) //new record
+            {
+                try
+                {
+                    dc.tblAddresses.InsertOnSubmit(address);
+                    dc.SubmitChanges();
+                    return address.AddressID;
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                try
+                {
+                    var record = dc.tblAddresses.FirstOrDefault(x => x.AddressID == address.AddressID);
+                    record = address;
+                    dc.SubmitChanges();
+                    return address.AddressID;
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
 
         #endregion *** Addresses ***
 
@@ -155,6 +189,21 @@ namespace PSL
             return dc.tblPatientPopulationTypes.OrderBy(x => x.Order).ToList();
         }
 
+        public string GenerateUserID(int recordID, UserType type)
+        {
+            string cUID = string.Empty;
+
+            if (type == UserType.Clinician)
+            {
+                cUID = string.Format("{0}-{1}", "PM", recordID.ToString().PadLeft(6,'0'));
+            }
+            else if(type == UserType.Employer)
+            {
+                cUID = string.Format("{0}-{1}", "ABM", recordID.ToString().PadLeft(6, '0'));
+            }
+            return cUID;
+        }
+
         ///// <summary>
         ///// Returns a list of PopulationTypes for a given job
         ///// </summary>
@@ -179,7 +228,7 @@ namespace PSL
 
         #region *** Inserts ***
 
-        public bool UpSertClinician(tblClinician clinician)
+        public int UpsertClinician(tblClinician clinician)
         {
             if(clinician.ClinicianID == 0) //new record
             {
@@ -187,11 +236,16 @@ namespace PSL
                 {
                     dc.tblClinicians.InsertOnSubmit(clinician);
                     dc.SubmitChanges();
-                    return true;
+
+                    var Id = clinician.ClinicianID;
+                    clinician.UserID = GenerateUserID(Id, UserType.Clinician);
+
+                    UpsertClinician(clinician);
+                    return Id;
                 }
                 catch (Exception ex)
                 {
-                    return false;
+                    throw ex;
                 }                
             }
             else
@@ -201,45 +255,14 @@ namespace PSL
                     var record = dc.tblClinicians.FirstOrDefault(x => x.ClinicianID == clinician.ClinicianID);
                     record = clinician;
                     dc.SubmitChanges();
-                    return true;
+                    return clinician.ClinicianID;
                 }
                 catch (Exception ex)
                 {
-                    return false;
+                    throw ex;
                 }
             }
-        }
-
-        public bool UpSertAddress(tblAddress address)
-        {
-            if(address.AddressID == 0) // new record
-            {
-                try
-                {
-                    dc.tblAddresses.InsertOnSubmit(address);
-                    dc.SubmitChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                try
-                {
-                    var record = dc.tblAddresses.FirstOrDefault(x => x.AddressID == address.AddressID);
-                    record = address;
-                    dc.SubmitChanges();
-                    return true;
-                }
-                catch(Exception ex)
-                {
-                    return false;
-                }
-            }
-        }
+        }               
 
         #endregion *** Inserts ***
 
@@ -309,6 +332,15 @@ namespace PSL
 
         #endregion *** ZipCode API Calls ***
 
-        
+        #region *** UserManagement ***
+
+        private Guid CreateNewGuid()
+        {
+            Guid value = Guid.NewGuid();
+            return value;
+        }
+        #endregion *** UserManagement ***
+
+
     }
 }

@@ -1,271 +1,324 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17.75" name="LinqToSqlDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.25, 16.875" name="LinqToSqlDB">
   <DataContextMoniker Name="/LinqToSqlDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="789d774e-8c44-4b54-b4a0-c197bae445f1" absoluteBounds="0.5, 0.5, 2, 3.5016097005208326">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinician" />
-      <nestedChildShapes>
-        <elementListCompartment Id="01700f94-c929-4fd4-8c0d-af623fe38a42" absoluteBounds="0.515, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3556dc86-163e-407b-9515-5a65b1694f2b" absoluteBounds="4.125, 2.5, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAddress" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b68a6b04-aa67-4692-a21e-21bcd8f6bfec" absoluteBounds="4.14, 2.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.5 : 3.25080485026042); (4.125 : 3.25080485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinician/tblClinician_tblAddress" />
-      <nodes>
-        <classShapeMoniker Id="789d774e-8c44-4b54-b4a0-c197bae445f1" />
-        <classShapeMoniker Id="3556dc86-163e-407b-9515-5a65b1694f2b" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="c5064c67-d76b-4f18-97aa-733ccde10abe" absoluteBounds="0.5, 4.125, 2, 2.5401025390624996">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmployer" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d40be072-f41c-478f-b0fb-b11e31cf7840" absoluteBounds="0.515, 4.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.5 : 4.48640055338542); (2.79166666666667 : 4.48640055338542 : JumpStart); (2.95833333333333 : 4.48640055338542 : JumpEnd); (4.125 : 4.48640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmployer/tblEmployer_tblAddress" />
-      <nodes>
-        <classShapeMoniker Id="c5064c67-d76b-4f18-97aa-733ccde10abe" />
-        <classShapeMoniker Id="3556dc86-163e-407b-9515-5a65b1694f2b" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="b1a87343-1677-4845-a5fb-4c27600ea9b0" absoluteBounds="7.75, 2.375, 2, 2.5401025390625">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAdminUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="42ba1626-64c9-440f-a5f2-f7a8e2353be1" absoluteBounds="7.7650000000000006, 2.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="40e0418b-be48-41fe-aed2-2e54dda98d00" absoluteBounds="7.875, 5.5, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAvailability" />
-      <nestedChildShapes>
-        <elementListCompartment Id="60994f04-58e1-4566-b4b3-099e2e4d793a" absoluteBounds="7.8900000000000006, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" absoluteBounds="0.5, 6.875, 2, 3.8862125651041666">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJob" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e4b1a262-6f6a-4992-9559-1fefe3a025af" absoluteBounds="0.515, 7.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="baf79db8-0d6a-4946-87f6-eadb93fb1a82" absoluteBounds="7.875, 7.25, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianLanguage" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2bda7e54-8779-4f0b-9d30-22b4b9272d7f" absoluteBounds="7.8900000000000006, 7.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(1.5 : 4.00160970052083); (1.5 : 4.06410970052083); (2.5625 : 4.06410970052083); (2.5625 : 7.1875); (6.41666666666667 : 7.1875 : JumpStart); (6.58333333333333 : 7.1875 : JumpEnd); (7.78125 : 7.1875); (7.78125 : 8.13205971582031); (7.875 : 8.13205971582031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinician/tblClinician_tblClinicianLanguage" />
-      <nodes>
-        <classShapeMoniker Id="789d774e-8c44-4b54-b4a0-c197bae445f1" />
-        <classShapeMoniker Id="baf79db8-0d6a-4946-87f6-eadb93fb1a82" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="50aabffb-bac0-4a39-b133-53228d23ee0d" absoluteBounds="4.125, 5.375, 2, 1.3862939453125">
+    <classShape Id="50aabffb-bac0-4a39-b133-53228d23ee0d" absoluteBounds="8.125, 2.25, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblLanguage" />
       <nestedChildShapes>
-        <elementListCompartment Id="cd9b4719-e9d7-4d58-b16d-e5b0fffd1b83" absoluteBounds="4.14, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cd9b4719-e9d7-4d58-b16d-e5b0fffd1b83" absoluteBounds="8.14, 2.7100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.875 : 7.56532148632813); (7.86458333333333 : 7.56532148632812 : JumpStart); (7.69791666666667 : 7.56532148632813 : JumpEnd); (6.5 : 7.56532148632813); (6.5 : 7.0112939453125); (5.125 : 7.0112939453125); (5.125 : 6.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinicianLanguage/tblClinicianLanguage_tblLanguage" />
-      <nodes>
-        <classShapeMoniker Id="baf79db8-0d6a-4946-87f6-eadb93fb1a82" />
-        <classShapeMoniker Id="50aabffb-bac0-4a39-b133-53228d23ee0d" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="f6389731-6086-4b43-bd5b-a6f7291b7765" absoluteBounds="4.25, 7.25, 2, 1.3862939453125">
+    <classShape Id="f6389731-6086-4b43-bd5b-a6f7291b7765" absoluteBounds="4.625, 12.75, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblPositionType" />
       <nestedChildShapes>
-        <elementListCompartment Id="581a0707-869a-4be5-9349-98f9bcc2b5a8" absoluteBounds="4.265, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="581a0707-869a-4be5-9349-98f9bcc2b5a8" absoluteBounds="4.64, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7c253f58-4e11-4903-a2ca-89c04ef40bb9" absoluteBounds="4.25, 9.125, 2, 1.3862939453125">
+    <classShape Id="7c253f58-4e11-4903-a2ca-89c04ef40bb9" absoluteBounds="8.375, 13.375, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblServiceType" />
       <nestedChildShapes>
-        <elementListCompartment Id="b57a5223-5f77-44e6-8b40-428b9d017e92" absoluteBounds="4.265, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b57a5223-5f77-44e6-8b40-428b9d017e92" absoluteBounds="8.39, 13.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 7.94314697265625); (4.25 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblPositionType" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="f6389731-6086-4b43-bd5b-a6f7291b7765" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 9.81814697265625); (4.25 : 9.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblServiceType" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="7c253f58-4e11-4903-a2ca-89c04ef40bb9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.5 : 6.875); (1.5 : 6.8237939453125); (2.47916666666667 : 6.8237939453125 : JumpStart); (2.64583333333333 : 6.8237939453125 : JumpEnd); (7.78125 : 6.8237939453125); (7.78125 : 6.19314697265625); (7.875 : 6.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblAvailability" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="40e0418b-be48-41fe-aed2-2e54dda98d00" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="d53a9376-997a-413a-959b-e44ea5f698cd" absoluteBounds="8, 9.125, 2, 1.3862939453125">
+    <classShape Id="d53a9376-997a-413a-959b-e44ea5f698cd" absoluteBounds="11, 13.25, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblYearsExperience" />
       <nestedChildShapes>
-        <elementListCompartment Id="9b5f7de0-3e3b-4ada-8e30-24820bff74b5" absoluteBounds="8.015, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9b5f7de0-3e3b-4ada-8e30-24820bff74b5" absoluteBounds="11.015, 13.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 7.09939697265625); (6.41666666666667 : 7.09939697265625 : JumpStart); (6.58333333333333 : 7.09939697265625 : JumpEnd); (9.96875 : 7.09939697265625); (9.96875 : 9.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblYearsExperience" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="d53a9376-997a-413a-959b-e44ea5f698cd" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 6.87653746153846); (2.50357443490112 : 6.87296302663734 : JumpStart); (2.62142556509888 : 6.75511189643958 : JumpEnd); (2.875 : 6.50153746153846); (2.875 : 3.86860270182292); (4.125 : 3.86860270182292)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblAddress" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="3556dc86-163e-407b-9515-5a65b1694f2b" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="eca6ca22-4e08-4dd4-a08e-b20a55f3c2dc" absoluteBounds="4.375, 10.875, 2, 1.3862939453125">
+    <classShape Id="eca6ca22-4e08-4dd4-a08e-b20a55f3c2dc" absoluteBounds="0.625, 13.125, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobJobExperienceType" />
       <nestedChildShapes>
-        <elementListCompartment Id="3f5d150c-9bb4-4f12-87be-cf84223ad724" absoluteBounds="4.39, 11.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3f5d150c-9bb4-4f12-87be-cf84223ad724" absoluteBounds="0.63999999999999968, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2014ade0-3729-448f-8838-d0f89f334171" absoluteBounds="8.25, 11, 2, 1.3862939453125">
+    <classShape Id="2014ade0-3729-448f-8838-d0f89f334171" absoluteBounds="8.375, 15.25, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobLanguage" />
       <nestedChildShapes>
-        <elementListCompartment Id="c2862081-20e2-4e0a-a85e-f021926c7f19" absoluteBounds="8.265, 11.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c2862081-20e2-4e0a-a85e-f021926c7f19" absoluteBounds="8.39, 15.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 8.88064697265625); (6.34375 : 8.88064697265625); (6.34375 : 10.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblJobJobExperienceType" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="eca6ca22-4e08-4dd4-a08e-b20a55f3c2dc" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="93e016b1-630c-4494-80d3-3284d4d4101f" absoluteBounds="8.25, 12.75, 2, 1.3862939453125">
+    <classShape Id="93e016b1-630c-4494-80d3-3284d4d4101f" absoluteBounds="4.75, 14.625, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobExperienceType" />
       <nestedChildShapes>
-        <elementListCompartment Id="3a937233-5a91-4b02-8b4a-9f8b671d39e4" absoluteBounds="8.265, 13.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3a937233-5a91-4b02-8b4a-9f8b671d39e4" absoluteBounds="4.7650000000000006, 15.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.46875 : 12.2612939453125); (4.46875 : 14.1050439453125); (8.25 : 14.1050439453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.625 : 14.3550439453125); (6.71875 : 14.3550439453125); (6.71875 : 14.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJobJobExperienceType/tblJobJobExperienceType_tblJobExperienceType" />
       <nodes>
         <classShapeMoniker Id="eca6ca22-4e08-4dd4-a08e-b20a55f3c2dc" />
         <classShapeMoniker Id="93e016b1-630c-4494-80d3-3284d4d4101f" />
       </nodes>
     </associationConnector>
-    <classShape Id="c09075e3-1eac-4ed2-964c-ff8dad64f61e" absoluteBounds="4.625, 12.625, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobPatientPopulationType" />
-      <nestedChildShapes>
-        <elementListCompartment Id="89f84b0a-0d33-4624-b525-a0c01a5f377f" absoluteBounds="4.64, 13.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8d88b876-3f27-4858-a050-d62b9ed4d3aa" absoluteBounds="0.625, 11.375, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblPatientPopulationType" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cfa5d88e-682f-49f6-8a5e-a5160e1b1c3e" absoluteBounds="0.64, 11.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(0.53125 : 10.7612125651042); (0.53125 : 13.1306469726562); (0.572916666666667 : 13.1306469726562 : JumpStart); (0.739583333333333 : 13.1306469726562 : JumpEnd); (4.38541666666667 : 13.1306469726562 : JumpStart); (4.55208333333333 : 13.1306469726562 : JumpEnd); (4.625 : 13.1306469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblJobPatientPopulationType" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="c09075e3-1eac-4ed2-964c-ff8dad64f61e" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.625 : 13.3153259863281); (4.55208333333333 : 13.3153259863281 : JumpStart); (4.38541666666667 : 13.3153259863281 : JumpEnd); (0.65625 : 13.3153259863281); (0.65625 : 12.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJobPatientPopulationType/tblJobPatientPopulationType_tblPatientPopulationType" />
-      <nodes>
-        <classShapeMoniker Id="c09075e3-1eac-4ed2-964c-ff8dad64f61e" />
-        <classShapeMoniker Id="8d88b876-3f27-4858-a050-d62b9ed4d3aa" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 10.6675032552083); (6.26041666666667 : 10.6675032552083 : JumpStart); (6.42708333333333 : 10.6675032552083 : JumpEnd); (10.15625 : 10.6675032552083); (10.15625 : 11)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblJobLanguage" />
-      <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="2014ade0-3729-448f-8838-d0f89f334171" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.1249975 : 11); (10.1249975 : 5.40625); (6.125 : 5.40625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 15.25); (8 : 14.875); (7.75 : 14.875); (7.75 : 4.0112939453125); (8.125 : 3.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJobLanguage/tblJobLanguage_tblLanguage" />
       <nodes>
         <classShapeMoniker Id="2014ade0-3729-448f-8838-d0f89f334171" />
         <classShapeMoniker Id="50aabffb-bac0-4a39-b133-53228d23ee0d" />
       </nodes>
     </associationConnector>
-    <classShape Id="dd64bcaa-1b4d-4539-b940-3dd1a970fbfe" absoluteBounds="4.125, 0.625, 2, 1.3862939453125">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianType" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0d4935bf-2803-40f1-a552-eb93fff6f8e5" absoluteBounds="4.14, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.31814697265625); (4.125 : 1.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinician/tblClinician_tblClinicianType" />
-      <nodes>
-        <classShapeMoniker Id="789d774e-8c44-4b54-b4a0-c197bae445f1" />
-        <classShapeMoniker Id="dd64bcaa-1b4d-4539-b940-3dd1a970fbfe" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="a5f76faa-eb90-4003-be9a-ff7a3d2d8df2" absoluteBounds="0.75, 13.5, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmrErxExperienceType" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d4d94edc-c126-4014-919e-406ecb09ddd2" absoluteBounds="0.765, 13.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="fee76fb6-86b1-4e05-b3e7-0ec70ddf7256" absoluteBounds="8, 0.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmployerClinicianStatus" />
       <nestedChildShapes>
         <elementListCompartment Id="668492d5-b185-4142-88e9-736d5695957a" absoluteBounds="8.015, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 0.53125); (8 : 0.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinician/tblClinician_tblEmployerClinicianStatus" />
+    <classShape Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" absoluteBounds="0.5, 0.5, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinician" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faced462-0298-4bb9-bd4d-023c50ad0531" absoluteBounds="0.515, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.00106537995793 : 0.5); (7.62606537995793 : 0.125); (2.87653746153846 : 0.125); (2.5 : 0.501537461538462)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmployerClinicianStatus/tblEmployerClinicianStatus_tblClinician" />
       <nodes>
-        <classShapeMoniker Id="789d774e-8c44-4b54-b4a0-c197bae445f1" />
         <classShapeMoniker Id="fee76fb6-86b1-4e05-b3e7-0ec70ddf7256" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5 : 5.14505126953125); (2.79166666666667 : 5.14505126953125 : JumpStart); (2.95833333333333 : 5.14505126953125 : JumpEnd); (9.96875 : 5.14505126953125); (9.96875 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmployer/tblEmployer_tblEmployerClinicianStatus" />
+    <associationConnector edgePoints="[(12 : 13.25); (12 : 13.0737939453125); (10.8125 : 13.0737939453125); (10.8125 : 2.1875); (6.42708333333333 : 2.1875 : JumpStart); (6.26041666666667 : 2.1875 : JumpEnd); (2.77083333333333 : 2.1875 : JumpStart); (2.60416666666667 : 2.1875 : JumpEnd); (2.59375 : 2.1875); (2.59375 : 2.20080000417825); (2.5 : 2.20080000417825)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblYearsExperience/tblYearsExperience_tblClinician" />
       <nodes>
-        <classShapeMoniker Id="c5064c67-d76b-4f18-97aa-733ccde10abe" />
-        <classShapeMoniker Id="fee76fb6-86b1-4e05-b3e7-0ec70ddf7256" />
+        <classShapeMoniker Id="d53a9376-997a-413a-959b-e44ea5f698cd" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
       </nodes>
     </associationConnector>
-    <classShape Id="a765bb68-c077-47ab-ab39-586c7e521855" absoluteBounds="5.625, 14.75, 2, 1.1939925130208333">
+    <classShape Id="eb7be959-7470-46e7-accf-f4bdb1b5b989" absoluteBounds="4.25, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e83df3d5-bb99-42d7-b319-170c0e79b2c2" absoluteBounds="4.265, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 1.22516820342548); (2.5 : 1.22516820342548)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinicianType/tblClinicianType_tblClinician" />
+      <nodes>
+        <classShapeMoniker Id="eb7be959-7470-46e7-accf-f4bdb1b5b989" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="86ad786b-33e7-4bf5-8795-858855512fbb" absoluteBounds="4.25, 2.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianLanguage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7c872e4-e7e1-4d7a-bc6c-55dd31b1efc5" absoluteBounds="4.265, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 2.94314697265625); (6.42708333333333 : 2.94314697265625 : JumpStart); (6.26041666666667 : 2.94314697265625 : JumpEnd); (6.25 : 2.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblLanguage/tblLanguage_tblClinicianLanguage" />
+      <nodes>
+        <classShapeMoniker Id="50aabffb-bac0-4a39-b133-53228d23ee0d" />
+        <classShapeMoniker Id="86ad786b-33e7-4bf5-8795-858855512fbb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bc8b10fb-7a80-4285-9cae-8fbbad283997" absoluteBounds="4.375, 4.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAvailability" />
+      <nestedChildShapes>
+        <elementListCompartment Id="236fa42c-8b14-497c-b6c7-c72067f9d33f" absoluteBounds="4.39, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.34375 : 4.375); (6.34375 : 2.06814697265625); (2.77083333333333 : 2.06814697265625 : JumpStart); (2.60416666666667 : 2.06814697265625 : JumpEnd); (2.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblAvailability/tblAvailability_tblClinician" />
+      <nodes>
+        <classShapeMoniker Id="bc8b10fb-7a80-4285-9cae-8fbbad283997" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="be18aaed-cbe9-4727-8c27-37a60ad02dfd" absoluteBounds="8.25, 4, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2aa3d884-6dd0-401d-b39a-e12d08f40b61" absoluteBounds="8.265, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 4.19794840494792); (7.83333333333333 : 4.19794840494792 : JumpStart); (7.66666666666667 : 4.19794840494792 : JumpEnd); (6.42708333333333 : 4.19794840494792 : JumpStart); (6.26041666666667 : 4.19794840494792 : JumpEnd); (2.77083333333333 : 4.19794840494792 : JumpStart); (2.60416666666667 : 4.19794840494792 : JumpEnd); (2.5 : 4.19794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinicianDocument/tblClinicianDocument_tblClinician" />
+      <nodes>
+        <classShapeMoniker Id="be18aaed-cbe9-4727-8c27-37a60ad02dfd" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0f387b7f-6f99-4738-bcd4-bbb5e4a778db" absoluteBounds="10.875, 4, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblDocumentType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3419ed4-1852-40b8-97f6-6b1f7b260ac8" absoluteBounds="10.89, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.875 : 4.88544840494792); (10.25 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblDocumentType/tblDocumentType_tblClinicianDocument" />
+      <nodes>
+        <classShapeMoniker Id="0f387b7f-6f99-4738-bcd4-bbb5e4a778db" />
+        <classShapeMoniker Id="be18aaed-cbe9-4727-8c27-37a60ad02dfd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f6c514d3-8369-4bea-b2a0-ca39caf0bf96" absoluteBounds="0.5, 5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmployer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2125feae-a1a9-49fb-be7b-0b5c2302d9a4" absoluteBounds="0.515, 5.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 1.19314697265625); (6.4375 : 1.19314697265625); (6.4375 : 1.9487939453125); (2.6875 : 1.9487939453125); (2.6875 : 4.64101399739583); (2.64583333333333 : 4.64101399739583 : JumpStart); (2.47916666666667 : 4.64101399739583 : JumpEnd); (1.468748 : 4.64101399739583); (1.468748 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmployerClinicianStatus/tblEmployerClinicianStatus_tblEmployer" />
+      <nodes>
+        <classShapeMoniker Id="fee76fb6-86b1-4e05-b3e7-0ec70ddf7256" />
+        <classShapeMoniker Id="f6c514d3-8369-4bea-b2a0-ca39caf0bf96" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f0b61a5e-c47a-4f09-a452-bf52d85f3469" absoluteBounds="8.375, 6.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmployerDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed33a213-1134-4ab7-af4e-9ffd8654195d" absoluteBounds="8.39, 7.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 5.77089680989583); (11.875 : 6.125); (10.8958333333333 : 6.125 : JumpStart); (10.7291666666667 : 6.125 : JumpEnd); (10.625 : 6.125); (10.625 : 8.14505126953125); (10.375 : 8.14505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblDocumentType/tblDocumentType_tblEmployerDocument" />
+      <nodes>
+        <classShapeMoniker Id="0f387b7f-6f99-4738-bcd4-bbb5e4a778db" />
+        <classShapeMoniker Id="f0b61a5e-c47a-4f09-a452-bf52d85f3469" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 6.46235270182292); (2.51041666666667 : 6.46235270182292 : JumpStart); (2.67708333333333 : 6.46235270182292 : JumpEnd); (4.125 : 6.46235270182292); (4.125 : 9.10740397135417); (6.35416666666667 : 9.10740397135417 : JumpStart); (6.52083333333333 : 9.10740397135417 : JumpEnd); (7.66666666666667 : 9.10740397135417 : JumpStart); (7.83333333333333 : 9.10740397135417 : JumpEnd); (8.125 : 9.10740397135417); (8.125 : 9.6651025390625); (9.375 : 9.6651025390625); (9.375 : 9.4151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmployer/tblEmployer_tblEmployerDocument" />
+      <nodes>
+        <classShapeMoniker Id="f6c514d3-8369-4bea-b2a0-ca39caf0bf96" />
+        <classShapeMoniker Id="f0b61a5e-c47a-4f09-a452-bf52d85f3469" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e4ded3b0-d313-4f10-9770-8d5c0b772a6d" absoluteBounds="10.875, 6.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblEmrErxExperienceType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8995f93-9b2e-48b5-b2aa-eeb5c03f1165" absoluteBounds="10.89, 6.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ccf65081-de28-4c43-bf95-6b389e79cd90" absoluteBounds="8.375, 9.875, 2, 1.1939925130208333">
       <DataClassMoniker Name="/LinqToSqlDBDataContext/tblGeneralStatus" />
       <nestedChildShapes>
-        <elementListCompartment Id="a974c060-4415-424b-b791-c52c103df1f3" absoluteBounds="5.64, 15.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="aac8cfde-e284-4eef-b7bd-262489317665" absoluteBounds="8.39, 10.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(0.546875 : 10.7612125651042); (0.546875 : 15.09375); (5.625 : 15.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJob/tblJob_tblGeneralStatus" />
+    <classShape Id="67eb2954-4e79-411b-8ec4-c56ab4a05cfa" absoluteBounds="11, 8.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAdminUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5ef40c7-8c54-43e8-a080-89c72ca60188" absoluteBounds="11.015, 8.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 3.13544840494792); (2.77083333333333 : 3.13544840494792 : JumpStart); (2.60416666666667 : 3.13544840494792 : JumpEnd); (2.5 : 3.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinicianLanguage/tblClinicianLanguage_tblClinician" />
       <nodes>
-        <classShapeMoniker Id="9ed9b9b4-90c2-4091-bcc1-da43b5404541" />
-        <classShapeMoniker Id="a765bb68-c077-47ab-ab39-586c7e521855" />
+        <classShapeMoniker Id="86ad786b-33e7-4bf5-8795-858855512fbb" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
       </nodes>
     </associationConnector>
-    <classShape Id="78291ed1-cd4a-438b-b264-c07b756f13a7" absoluteBounds="0.75, 15.5, 2, 1.9631982421875">
-      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblClinicianJob" />
+    <classShape Id="762e0d0c-2fce-48b6-a45c-a55e156d543b" absoluteBounds="4.375, 9.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobClinicianMatch" />
       <nestedChildShapes>
-        <elementListCompartment Id="626345a8-1bd9-499d-8159-3b1099d9934b" absoluteBounds="0.765, 15.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="999f32a2-5ad5-45b7-9912-5953e526afde" absoluteBounds="4.39, 9.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 15.7219962565104); (5.625 : 15.7219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblClinicianJob/tblClinicianJob_tblGeneralStatus" />
+    <associationConnector edgePoints="[(8.375 : 10.4719962565104); (7.83333333333333 : 10.4719962565104 : JumpStart); (7.66666666666667 : 10.4719962565104 : JumpEnd); (6.70833333333333 : 10.4719962565104 : JumpStart); (6.54166666666667 : 10.4719962565104 : JumpEnd); (6.375 : 10.4719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblGeneralStatus/tblGeneralStatus_tblJobClinicianMatch" />
       <nodes>
-        <classShapeMoniker Id="78291ed1-cd4a-438b-b264-c07b756f13a7" />
-        <classShapeMoniker Id="a765bb68-c077-47ab-ab39-586c7e521855" />
+        <classShapeMoniker Id="ccf65081-de28-4c43-bf95-6b389e79cd90" />
+        <classShapeMoniker Id="762e0d0c-2fce-48b6-a45c-a55e156d543b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" absoluteBounds="0.625, 8.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJob" />
+      <nestedChildShapes>
+        <elementListCompartment Id="deeb0868-ad44-420d-8db1-be8882d815b1" absoluteBounds="0.64, 8.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 4.83733485677083); (2.84215419270833 : 4.83733485677083 : JumpStart); (2.67548752604167 : 4.83733485677083 : JumpEnd); (2.59375 : 4.83733485677083); (2.59375 : 8.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblAvailability/tblAvailability_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="bc8b10fb-7a80-4285-9cae-8fbbad283997" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 7.06814697265625); (10.7083333333333 : 7.06814697265625 : JumpStart); (10.5416666666667 : 7.06814697265625 : JumpEnd); (10.4375 : 7.06814697265625); (10.4375 : 9.4776025390625); (8.20833333333333 : 9.4776025390625 : JumpStart); (8.04166666666667 : 9.4776025390625 : JumpEnd); (7.83333333333333 : 9.4776025390625 : JumpStart); (7.66666666666667 : 9.4776025390625 : JumpEnd); (6.4375 : 9.4776025390625); (6.4375 : 8.91990397135417); (4.20833333333333 : 8.91990397135417 : JumpStart); (4.04166666666667 : 8.91990397135417 : JumpEnd); (2.6875 : 8.91990397135417); (2.6875 : 8.1875); (1.578123 : 8.1875); (1.578123 : 8.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblEmrErxExperienceType/tblEmrErxExperienceType_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="e4ded3b0-d313-4f10-9770-8d5c0b772a6d" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 10.1422461282552); (7.83333333333333 : 10.1422461282552 : JumpStart); (7.66666666666667 : 10.1422461282552 : JumpEnd); (6.625 : 10.1422461282552); (6.625 : 12.5785139973958); (6.61458333333333 : 12.5785139973958 : JumpStart); (6.44791666666667 : 12.5785139973958 : JumpEnd); (1.625 : 12.5785139973958); (1.625 : 12.3285139973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblGeneralStatus/tblGeneralStatus_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="ccf65081-de28-4c43-bf95-6b389e79cd90" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.53125 : 12.75); (6.53125 : 12.0691113867187); (2.625 : 12.0691113867187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblPositionType/tblPositionType_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="f6389731-6086-4b43-bd5b-a6f7291b7765" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 14.0681469726562); (7.83333333333333 : 14.0681469726562 : JumpStart); (7.66666666666667 : 14.0681469726562 : JumpEnd); (7.125 : 14.0681469726562); (7.125 : 12.6410139973958); (6.95833333333333 : 12.6410139973958 : JumpStart); (6.79166666666667 : 12.6410139973958 : JumpEnd); (6.61458333333333 : 12.6410139973958 : JumpStart); (6.44791666666667 : 12.6410139973958 : JumpEnd); (2.156252 : 12.6410139973958); (2.156252 : 12.3285139973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblServiceType/tblServiceType_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="7c253f58-4e11-4903-a2ca-89c04ef40bb9" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 13.5653214863281); (10.625 : 13.5653214863281); (10.625 : 13.1987939453125); (7.83333333333333 : 13.1987939453125 : JumpStart); (7.66666666666667 : 13.1987939453125 : JumpEnd); (7.20833333333333 : 13.1987939453125 : JumpStart); (7.04166666666667 : 13.1987939453125 : JumpEnd); (6.875 : 13.1987939453125); (6.875 : 12.5160139973958); (6.61458333333333 : 12.5160139973958 : JumpStart); (6.44791666666667 : 12.5160139973958 : JumpEnd); (2.23958533333333 : 12.5160139973958 : JumpStart); (2.07291866666667 : 12.5160139973958 : JumpEnd); (1.093748 : 12.5160139973958); (1.093748 : 12.3285139973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblYearsExperience/tblYearsExperience_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="d53a9376-997a-413a-959b-e44ea5f698cd" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48baea89-9e73-4f2f-9cce-40c412f882df" absoluteBounds="8.375, 11.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblJobPatientPopulationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2714e45-93b5-4a01-8a5d-e2754ed5ac94" absoluteBounds="8.39, 12.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f695dfe8-caec-4fa5-8f97-fd28b3b512ee" absoluteBounds="11, 11.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblPatientPopulationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74b3ead9-0247-4310-9dc1-67b81a5b0a30" absoluteBounds="11.015, 12.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 12.3181469726562); (10.8958333333333 : 12.3181469726562 : JumpStart); (10.7291666666667 : 12.3181469726562 : JumpEnd); (10.375 : 12.3181469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblPatientPopulationType/tblPatientPopulationType_tblJobPatientPopulationType" />
+      <nodes>
+        <classShapeMoniker Id="f695dfe8-caec-4fa5-8f97-fd28b3b512ee" />
+        <classShapeMoniker Id="48baea89-9e73-4f2f-9cce-40c412f882df" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 11.7472037760417); (7.83333333333333 : 11.7472037760417 : JumpStart); (7.66666666666667 : 11.7472037760417 : JumpEnd); (6.70833333333333 : 11.7472037760417 : JumpStart); (6.54166666666667 : 11.7472037760417 : JumpEnd); (2.625 : 11.7472037760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblJobPatientPopulationType/tblJobPatientPopulationType_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="48baea89-9e73-4f2f-9cce-40c412f882df" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c09c38c6-bcbe-4d9e-84ac-85e3f5dc216d" absoluteBounds="4.375, 6.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/LinqToSqlDBDataContext/tblAddress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1eb69db-c97c-4655-9395-c3d85fac4a1d" absoluteBounds="4.39, 6.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 6.125); (4 : 5.75); (4 : 4.95351399739583); (2.875 : 4.95351399739583); (2.5 : 4.57851399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblAddress/tblAddress_tblClinician" />
+      <nodes>
+        <classShapeMoniker Id="c09c38c6-bcbe-4d9e-84ac-85e3f5dc216d" />
+        <classShapeMoniker Id="06ec3ffe-d882-404b-8dec-f5e52b3f558f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 7.25602905273437); (4.20833333333333 : 7.25602905273437 : JumpStart); (4.04166666666667 : 7.25602905273437 : JumpEnd); (2.67708333333333 : 7.25602905273437 : JumpStart); (2.51041666666667 : 7.25602905273437 : JumpEnd); (2.5 : 7.25602905273437)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblAddress/tblAddress_tblEmployer" />
+      <nodes>
+        <classShapeMoniker Id="c09c38c6-bcbe-4d9e-84ac-85e3f5dc216d" />
+        <classShapeMoniker Id="f6c514d3-8369-4bea-b2a0-ca39caf0bf96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 8.55370198567708); (4.20833333333333 : 8.55370198567708 : JumpStart); (4.04166666666667 : 8.55370198567708 : JumpEnd); (2.625 : 8.55370198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDBDataContext/tblAddress/tblAddress_tblJob" />
+      <nodes>
+        <classShapeMoniker Id="c09c38c6-bcbe-4d9e-84ac-85e3f5dc216d" />
+        <classShapeMoniker Id="39e58a71-75eb-4fb4-98c7-cd09089e9b17" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
