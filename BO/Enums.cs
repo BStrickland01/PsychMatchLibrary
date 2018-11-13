@@ -28,6 +28,18 @@ namespace PSL.BO
             Closed,
         }
 
+        public enum PositionType
+        {
+            [Description("Psychiatric Supervisor")]
+            PsychiatricSupervisor = 1,
+            [Description("Medical Director")]
+            MedicalDirector,
+            [Description("Psychiatric prescriber / Clinician")]
+            PsychiatricPrescriberClinician,
+            [Description("Psychiatric unit / Clinic nurse")]
+            PsychiatricUnitClinicNurse
+        }
+
         public enum ClinicianType
         {
             Psychiatrist,
@@ -49,7 +61,14 @@ namespace PSL.BO
             DocumentsRecieved,
             EnQueue,
             JobMatched,
-            Closed
+            Closed,
+            Active
+        }
+
+        public enum EmployerTypes
+        {
+            Hospital,
+            Clinic
         }
 
         public enum AdminUsers
@@ -111,6 +130,20 @@ namespace PSL.BO
             NineToTenYears,
             [Description("10+")]
             TenPlusYears
+        }
+
+        public enum ServiceType
+        {
+            Onsite = 1,
+            Telemed,
+            All
+        }
+
+        public enum EmrErxExperienceType
+        {
+            emr,
+            erx,
+            Both
         }
     }
 }

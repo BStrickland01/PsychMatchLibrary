@@ -93,8 +93,7 @@ namespace PSL
             return dc.tblJobPatientPopulationTypes.Where(x => x.JobID == jobID).ToList();
         }
 
-        #endregion *** Jobs ***
-                
+        #endregion *** Jobs ***                
 
         #region *** Addresses ***
 
@@ -103,40 +102,9 @@ namespace PSL
             return dc.tblAddresses.FirstOrDefault(x => x.AddressID == addressID);
         }
 
-        public int UpsertAddress(tblAddress address)
-        {
-            if(address.AddressID == 0) //new record
-            {
-                try
-                {
-                    dc.tblAddresses.InsertOnSubmit(address);
-                    dc.SubmitChanges();
-                    return address.AddressID;
-                }
-                catch(Exception ex)
-                {
-                    throw ex;
-                }
-            }
-            else
-            {
-                try
-                {
-                    var record = dc.tblAddresses.FirstOrDefault(x => x.AddressID == address.AddressID);
-                    record = address;
-                    dc.SubmitChanges();
-                    return address.AddressID;
-                }
-                catch(Exception ex)
-                {
-                    throw ex;
-                }
-            }
-        }
-
+       
 
         #endregion *** Addresses ***
-
 
         #region *** General Fields ***
         public List<tblEmployerClinicianStatus> GetStatuses()
@@ -228,6 +196,47 @@ namespace PSL
 
         #region *** Inserts ***
 
+        /// <summary>
+        /// Updates / Inserts new Address
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public int UpsertAddress(tblAddress address)
+        {
+            if (address.AddressID == 0) //new record
+            {
+                try
+                {
+                    dc.tblAddresses.InsertOnSubmit(address);
+                    dc.SubmitChanges();
+                    return address.AddressID;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                try
+                {
+                    var record = dc.tblAddresses.FirstOrDefault(x => x.AddressID == address.AddressID);
+                    record = address;
+                    dc.SubmitChanges();
+                    return address.AddressID;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates / Inserts new Clinincian
+        /// </summary>
+        /// <param name="clinician"></param>
+        /// <returns></returns>
         public int UpsertClinician(tblClinician clinician)
         {
             if(clinician.ClinicianID == 0) //new record
@@ -240,7 +249,7 @@ namespace PSL
                     var Id = clinician.ClinicianID;
                     clinician.UserID = GenerateUserID(Id, UserType.Clinician);
 
-                    UpsertClinician(clinician);
+                    UpsertClinician(clinician);  //2nd call updates the UserID
                     return Id;
                 }
                 catch (Exception ex)
@@ -255,7 +264,7 @@ namespace PSL
                     var record = dc.tblClinicians.FirstOrDefault(x => x.ClinicianID == clinician.ClinicianID);
                     record = clinician;
                     dc.SubmitChanges();
-                    return clinician.ClinicianID;
+                    return record.ClinicianID;
                 }
                 catch (Exception ex)
                 {
@@ -264,7 +273,201 @@ namespace PSL
             }
         }               
 
+        /// <summary>
+        /// Inserts list of languages spoken by a clinician
+        /// </summary>
+        /// <param name="clinicianLanguages"></param>
+        /// <returns></returns>
+        public int InsertClinicianLanguages(List<tblClinicianLanguage> clinicianLanguages)
+        {
+            try
+            {
+                dc.tblClinicianLanguages.InsertAllOnSubmit(clinicianLanguages);
+                dc.SubmitChanges();
+
+                var id = clinicianLanguages.LastOrDefault().ID;
+                return id;
+            }
+            catch(Exception ex)
+            {
+                throw ex; 
+            }
+        }
+
+        /// <summary>
+        /// Updates / Inserts new Employer
+        /// </summary>
+        /// <param name="employer"></param>
+        /// <returns></returns>
+        public int UpsertEmployer(tblEmployer employer)
+        {
+            if(employer.EmployerID == 0) //new record
+            {
+                try
+                {
+                    dc.tblEmployers.InsertOnSubmit(employer);
+                    dc.SubmitChanges();
+
+                    var Id = employer.EmployerID;
+                    employer.UserID = GenerateUserID(Id, UserType.Employer);
+
+                    UpsertEmployer(employer); //2nd call updates the UserID
+                    return Id;
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else //update
+            {
+                try
+                {
+                    var record = dc.tblEmployers.FirstOrDefault(x => x.EmployerID == employer.EmployerID);
+                    record = employer;
+                    dc.SubmitChanges();
+                    return record.EmployerID;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Updates / Inserts new Job
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        public int UpsertJob(tblJob job)
+        {
+            if (job.JobID == 0) //new record
+            {
+                try
+                {
+                    dc.tblJobs.InsertOnSubmit(job);
+                    dc.SubmitChanges();
+
+                    return job.JobID;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else // update
+            {
+                try
+                {
+                    var record = dc.tblJobs.FirstOrDefault(x => x.JobID == job.JobID);
+                    record = job;
+                    dc.SubmitChanges();
+
+                    return record.JobID;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Insert matches a Job to a Clinician
+        /// </summary>
+        /// <param name="jobClinicianMatch"></param>
+        /// <returns></returns>
+        public int InsertJobClinicianMatch(tblJobClinicianMatch jobClinicianMatch)
+        {
+            try
+            {
+                dc.tblJobClinicianMatches.InsertOnSubmit(jobClinicianMatch);
+                dc.SubmitChanges();
+
+                var id = jobClinicianMatch.JobClinicianMatchID;
+                return id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion *** Inserts ***
+
+        #region *** Deletes *** 
+
+        public bool DeleteClinicianLanguage(int id)
+        {
+            try
+            {
+                var record = dc.tblClinicianLanguages.FirstOrDefault(x => x.ID == id);
+
+                if (record != null)
+                {
+                    dc.tblClinicianLanguages.DeleteOnSubmit(record);
+                    dc.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool DeleteClinicianLanguage(List<int> ids)
+        {
+            try
+            {
+                var records = dc.tblClinicianLanguages.Where(x=>ids.Contains(x.ID));
+
+                if (records != null)
+                {
+                    dc.tblClinicianLanguages.DeleteAllOnSubmit(records);
+                    dc.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool DeleteJobClinicianMatch(int id)
+        {
+            try
+            {
+                var record = dc.tblJobClinicianMatches.FirstOrDefault(x => x.JobClinicianMatchID == id);
+
+                if (record != null)
+                {
+                    dc.tblJobClinicianMatches.DeleteOnSubmit(record);
+                    dc.SubmitChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
 
         #region *** ZipCode API Calls ***
 

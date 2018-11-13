@@ -233,7 +233,6 @@
       <Column Name="YearsExpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EmployerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PosterUserID" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="ClinicianID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PositionTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -4915,8 +4915,6 @@ namespace PSL.DAL
 		
 		private string _PosterUserID;
 		
-		private int _ClinicianID;
-		
 		private int _PositionTypeID;
 		
 		private int _LanguageID;
@@ -4969,8 +4967,6 @@ namespace PSL.DAL
     partial void OnEmployerIDChanged();
     partial void OnPosterUserIDChanging(string value);
     partial void OnPosterUserIDChanged();
-    partial void OnClinicianIDChanging(int value);
-    partial void OnClinicianIDChanged();
     partial void OnPositionTypeIDChanging(int value);
     partial void OnPositionTypeIDChanged();
     partial void OnLanguageIDChanging(int value);
@@ -5152,26 +5148,6 @@ namespace PSL.DAL
 					this._PosterUserID = value;
 					this.SendPropertyChanged("PosterUserID");
 					this.OnPosterUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClinicianID", DbType="Int NOT NULL")]
-		public int ClinicianID
-		{
-			get
-			{
-				return this._ClinicianID;
-			}
-			set
-			{
-				if ((this._ClinicianID != value))
-				{
-					this.OnClinicianIDChanging(value);
-					this.SendPropertyChanging();
-					this._ClinicianID = value;
-					this.SendPropertyChanged("ClinicianID");
-					this.OnClinicianIDChanged();
 				}
 			}
 		}
